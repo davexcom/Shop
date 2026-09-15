@@ -1,0 +1,3559 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>TrailerPark Trav — Custom Hoodies</title>
+  <meta name="description" content="TrailerPark Trav custom hoodies and personalized streetwear.">
+
+  <style>
+    :root{
+      --black:#080808;
+      --dark:#111;
+      --gray:#777;
+      --light:#f5f5f5;
+      --white:#fff;
+      --border:#e8e8e8;
+      --green:#16a34a;
+      --shadow:0 18px 60px rgba(0,0,0,.16);
+      --radius:18px;
+    }
+
+    *{
+      box-sizing:border-box;
+      margin:0;
+      padding:0;
+    }
+
+    html{
+      scroll-behavior:smooth;
+    }
+
+    body{
+      font-family:Arial,Helvetica,sans-serif;
+      background:#fff;
+      color:#111;
+      line-height:1.5;
+    }
+
+    button,input,select,textarea{
+      font:inherit;
+    }
+
+    button{
+      cursor:pointer;
+    }
+
+    img{
+      max-width:100%;
+      display:block;
+    }
+
+    a{
+      text-decoration:none;
+      color:inherit;
+    }
+
+    /* ================= NAV ================= */
+
+    header{
+      position:sticky;
+      top:0;
+      z-index:100;
+      background:rgba(255,255,255,.96);
+      backdrop-filter:blur(12px);
+      border-bottom:1px solid #eee;
+    }
+
+    .nav{
+      max-width:1250px;
+      margin:auto;
+      min-height:76px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      padding:0 22px;
+      gap:20px;
+    }
+
+    .logo{
+      font-size:23px;
+      font-weight:900;
+      letter-spacing:-1px;
+      white-space:nowrap;
+    }
+
+    .nav-links{
+      display:flex;
+      align-items:center;
+      gap:28px;
+      font-size:14px;
+      font-weight:700;
+    }
+
+    .nav-links a:hover{
+      opacity:.6;
+    }
+
+    .nav-actions{
+      display:flex;
+      gap:9px;
+      align-items:center;
+    }
+
+    .nav-btn{
+      border:1px solid #ddd;
+      background:#fff;
+      padding:10px 14px;
+      border-radius:999px;
+      font-size:13px;
+      font-weight:800;
+    }
+
+    .nav-btn:hover{
+      background:#f4f4f4;
+    }
+
+    .cart-btn{
+      background:#080808;
+      color:#fff;
+      border-color:#080808;
+    }
+
+    /* ================= HERO ================= */
+
+    .hero{
+      background:#090909;
+      color:#fff;
+      min-height:610px;
+      display:flex;
+      align-items:center;
+      position:relative;
+      overflow:hidden;
+    }
+
+    .hero:before{
+      content:"";
+      position:absolute;
+      width:500px;
+      height:500px;
+      border-radius:50%;
+      background:rgba(255,255,255,.06);
+      right:-120px;
+      top:-100px;
+    }
+
+    .hero-inner{
+      max-width:1250px;
+      width:100%;
+      margin:auto;
+      padding:80px 22px;
+      position:relative;
+      z-index:2;
+    }
+
+    .hero-small{
+      font-size:12px;
+      letter-spacing:3px;
+      text-transform:uppercase;
+      color:#aaa;
+      margin-bottom:18px;
+      font-weight:700;
+    }
+
+    .hero h1{
+      max-width:780px;
+      font-size:clamp(45px,7vw,88px);
+      line-height:.95;
+      letter-spacing:-5px;
+      margin-bottom:25px;
+    }
+
+    .hero p{
+      max-width:620px;
+      color:#bdbdbd;
+      font-size:17px;
+      margin-bottom:32px;
+    }
+
+    .hero-buttons{
+      display:flex;
+      gap:12px;
+      flex-wrap:wrap;
+    }
+
+    .btn{
+      border:0;
+      border-radius:10px;
+      padding:14px 22px;
+      font-weight:800;
+      transition:.2s;
+    }
+
+    .btn:hover{
+      transform:translateY(-2px);
+    }
+
+    .btn-black{
+      background:#080808;
+      color:#fff;
+    }
+
+    .btn-white{
+      background:#fff;
+      color:#080808;
+    }
+
+    .btn-outline{
+      background:#fff;
+      border:1px solid #ddd;
+    }
+
+    .btn-green{
+      background:var(--green);
+      color:#fff;
+    }
+
+    /* ================= GENERAL ================= */
+
+    section{
+      padding:90px 22px;
+    }
+
+    .container{
+      max-width:1250px;
+      margin:auto;
+    }
+
+    .section-heading{
+      display:flex;
+      justify-content:space-between;
+      align-items:end;
+      gap:30px;
+      margin-bottom:35px;
+    }
+
+    .section-heading h2{
+      font-size:42px;
+      letter-spacing:-2px;
+    }
+
+    .section-heading p{
+      max-width:500px;
+      color:#777;
+    }
+
+    /* ================= PRODUCTS ================= */
+
+    .products{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:20px;
+    }
+
+    .product-card{
+      border:1px solid #e9e9e9;
+      border-radius:18px;
+      overflow:hidden;
+      background:#fff;
+      transition:.25s;
+    }
+
+    .product-card:hover{
+      transform:translateY(-5px);
+      box-shadow:0 15px 45px rgba(0,0,0,.08);
+    }
+
+    .product-image{
+      height:340px;
+      background:#f1f1f1;
+      overflow:hidden;
+      position:relative;
+    }
+
+    .product-image img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+    }
+
+    .product-info{
+      padding:19px;
+    }
+
+    .product-tag{
+      display:inline-block;
+      font-size:10px;
+      font-weight:900;
+      letter-spacing:1px;
+      background:#f2f2f2;
+      padding:5px 8px;
+      border-radius:999px;
+      margin-bottom:10px;
+      text-transform:uppercase;
+    }
+
+    .product-info h3{
+      font-size:18px;
+      margin-bottom:5px;
+    }
+
+    .product-info p{
+      font-size:13px;
+      color:#777;
+      min-height:40px;
+      margin-bottom:14px;
+    }
+
+    .product-bottom{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:10px;
+    }
+
+    .price{
+      font-weight:900;
+      font-size:18px;
+    }
+
+    .buy-btn{
+      border:0;
+      background:#080808;
+      color:#fff;
+      border-radius:9px;
+      padding:11px 13px;
+      font-size:12px;
+      font-weight:800;
+    }
+
+    .buy-btn:hover{
+      background:#333;
+    }
+
+    /* ================= ABOUT ================= */
+
+    .about{
+      background:#f6f6f6;
+    }
+
+    .about-grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:70px;
+      align-items:center;
+    }
+
+    .about h2{
+      font-size:45px;
+      letter-spacing:-2px;
+      margin-bottom:20px;
+    }
+
+    .about p{
+      color:#666;
+      margin-bottom:15px;
+    }
+
+    .about-boxes{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:15px;
+    }
+
+    .about-box{
+      background:#fff;
+      border-radius:16px;
+      padding:25px;
+      border:1px solid #e8e8e8;
+    }
+
+    .about-box strong{
+      display:block;
+      font-size:25px;
+      margin-bottom:7px;
+    }
+
+    .about-box span{
+      color:#777;
+      font-size:13px;
+    }
+
+    /* ================= FOOTER ================= */
+
+    footer{
+      background:#080808;
+      color:#fff;
+      padding:55px 22px;
+    }
+
+    .footer-inner{
+      max-width:1250px;
+      margin:auto;
+      display:flex;
+      justify-content:space-between;
+      gap:30px;
+      flex-wrap:wrap;
+    }
+
+    .footer-logo{
+      font-size:24px;
+      font-weight:900;
+      margin-bottom:8px;
+    }
+
+    footer p{
+      color:#999;
+      font-size:13px;
+    }
+
+    .footer-right{
+      color:#888;
+      font-size:13px;
+      text-align:right;
+    }
+
+    /* ================= MODALS ================= */
+
+    .modal{
+      display:none;
+      position:fixed;
+      inset:0;
+      z-index:1000;
+      background:rgba(0,0,0,.72);
+      padding:20px;
+      overflow-y:auto;
+    }
+
+    .modal.active{
+      display:flex;
+      align-items:center;
+      justify-content:center;
+    }
+
+    .modal-box{
+      width:min(900px,100%);
+      max-height:94vh;
+      overflow-y:auto;
+      background:#fff;
+      border-radius:22px;
+      box-shadow:var(--shadow);
+      position:relative;
+    }
+
+    .modal-small{
+      width:min(600px,100%);
+    }
+
+    .modal-header{
+      padding:22px 25px;
+      border-bottom:1px solid #eee;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:15px;
+      position:sticky;
+      top:0;
+      background:#fff;
+      z-index:3;
+    }
+
+    .modal-header h2{
+      font-size:23px;
+      letter-spacing:-.8px;
+    }
+
+    .close{
+      width:38px;
+      height:38px;
+      border-radius:50%;
+      border:1px solid #ddd;
+      background:#fff;
+      font-size:20px;
+    }
+
+    .modal-body{
+      padding:25px;
+    }
+
+    /* ================= FORMS ================= */
+
+    .selected-product{
+      display:flex;
+      gap:18px;
+      align-items:center;
+      background:#f7f7f7;
+      border-radius:14px;
+      padding:14px;
+      margin-bottom:22px;
+    }
+
+    .selected-product img{
+      width:80px;
+      height:80px;
+      object-fit:cover;
+      border-radius:10px;
+    }
+
+    .selected-product h3{
+      margin-bottom:4px;
+    }
+
+    .selected-product p{
+      color:#777;
+      font-size:13px;
+    }
+
+    .form-grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:16px;
+    }
+
+    .form-group{
+      margin-bottom:16px;
+    }
+
+    .form-group.full{
+      grid-column:1/-1;
+    }
+
+    label{
+      display:block;
+      font-size:12px;
+      font-weight:900;
+      margin-bottom:7px;
+      text-transform:uppercase;
+      letter-spacing:.5px;
+    }
+
+    input,select,textarea{
+      width:100%;
+      border:1px solid #ddd;
+      border-radius:10px;
+      padding:13px;
+      background:#fff;
+      outline:none;
+    }
+
+    input:focus,
+    select:focus,
+    textarea:focus{
+      border-color:#111;
+    }
+
+    textarea{
+      min-height:100px;
+      resize:vertical;
+    }
+
+    .address-title{
+      margin:30px 0 17px;
+      padding-top:25px;
+      border-top:1px solid #eee;
+      font-size:18px;
+    }
+
+    .modal-footer{
+      padding:20px 25px;
+      border-top:1px solid #eee;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:15px;
+      position:sticky;
+      bottom:0;
+      background:#fff;
+      z-index:3;
+    }
+
+    .modal-footer-right{
+      display:flex;
+      gap:10px;
+    }
+
+    /* ================= REVIEW ================= */
+
+    .review-item{
+      border:1px solid #e6e6e6;
+      border-radius:15px;
+      padding:15px;
+      margin-bottom:15px;
+    }
+
+    .review-top{
+      display:flex;
+      justify-content:space-between;
+      gap:15px;
+    }
+
+    .review-product{
+      display:flex;
+      gap:13px;
+    }
+
+    .review-product img{
+      width:80px;
+      height:80px;
+      border-radius:10px;
+      object-fit:cover;
+      background:#eee;
+    }
+
+    .review-product h3{
+      font-size:16px;
+      margin-bottom:3px;
+    }
+
+    .review-product p{
+      font-size:12px;
+      color:#777;
+    }
+
+    .remove-btn{
+      border:0;
+      background:#fff0f0;
+      color:#c00;
+      padding:7px 10px;
+      border-radius:8px;
+      font-size:11px;
+      font-weight:800;
+      height:max-content;
+    }
+
+    .review-details{
+      background:#f8f8f8;
+      border-radius:10px;
+      padding:13px;
+      margin-top:13px;
+      font-size:12px;
+      color:#555;
+    }
+
+    .review-details div{
+      margin-bottom:4px;
+    }
+
+    .review-details div:last-child{
+      margin-bottom:0;
+    }
+
+    .total-box{
+      display:flex;
+      justify-content:space-between;
+      padding:18px 0;
+      border-top:1px solid #ddd;
+      margin-top:15px;
+      font-size:20px;
+      font-weight:900;
+    }
+
+    /* ================= PAYMENT ================= */
+
+    .payment-total{
+      background:#080808;
+      color:#fff;
+      padding:20px;
+      border-radius:14px;
+      display:flex;
+      justify-content:space-between;
+      margin-bottom:22px;
+    }
+
+    .payment-tabs{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:10px;
+      margin-bottom:20px;
+    }
+
+    .payment-tab{
+      border:1px solid #ddd;
+      background:#fff;
+      border-radius:11px;
+      padding:14px;
+      font-weight:900;
+    }
+
+    .payment-tab.active{
+      background:#080808;
+      color:#fff;
+      border-color:#080808;
+    }
+
+    .payment-method{
+      display:none;
+      border:1px solid #e5e5e5;
+      border-radius:15px;
+      padding:20px;
+    }
+
+    .payment-method.active{
+      display:block;
+    }
+
+    .payment-method h3{
+      margin-bottom:7px;
+    }
+
+    .payment-method p{
+      color:#777;
+      font-size:13px;
+      margin-bottom:15px;
+    }
+
+    .qr-wrap{
+      display:flex;
+      justify-content:center;
+      padding:12px;
+      margin-bottom:15px;
+    }
+
+    .qr-wrap img{
+      width:210px;
+      height:210px;
+      border-radius:10px;
+    }
+
+    .address-box{
+      display:flex;
+      gap:8px;
+      align-items:stretch;
+    }
+
+    .address-box input{
+      font-size:11px;
+      background:#f7f7f7;
+    }
+
+    .copy-btn{
+      border:0;
+      background:#080808;
+      color:#fff;
+      padding:0 14px;
+      border-radius:9px;
+      font-weight:800;
+      font-size:12px;
+    }
+
+    .payment-warning{
+      margin-top:15px;
+      background:#fff8e6;
+      border:1px solid #f2dda3;
+      padding:13px;
+      border-radius:10px;
+      font-size:12px;
+      color:#765900;
+    }
+
+    /* ================= SUCCESS ================= */
+
+    .success{
+      text-align:center;
+      padding:45px 30px;
+    }
+
+    .success-icon{
+      width:80px;
+      height:80px;
+      margin:0 auto 20px;
+      border-radius:50%;
+      background:#dcfce7;
+      color:#16a34a;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-size:42px;
+      font-weight:900;
+    }
+
+    .success h2{
+      font-size:29px;
+      margin-bottom:8px;
+    }
+
+    .success p{
+      color:#777;
+      max-width:480px;
+      margin:0 auto 20px;
+    }
+
+    .order-number{
+      background:#f4f4f4;
+      padding:14px;
+      border-radius:10px;
+      font-weight:900;
+      margin-bottom:20px;
+    }
+
+    /* ================= ORDERS ================= */
+
+    .orders-empty{
+      text-align:center;
+      padding:50px 20px;
+      color:#777;
+    }
+
+    .order-card{
+      border:1px solid #e4e4e4;
+      border-radius:16px;
+      margin-bottom:16px;
+      overflow:hidden;
+    }
+
+    .order-card-header{
+      background:#f7f7f7;
+      padding:16px;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:15px;
+    }
+
+    .order-number-small{
+      font-weight:900;
+      font-size:14px;
+    }
+
+    .order-date{
+      color:#777;
+      font-size:11px;
+      margin-top:3px;
+    }
+
+    .status{
+      padding:7px 10px;
+      background:#fff4d6;
+      color:#795900;
+      border-radius:999px;
+      font-size:10px;
+      font-weight:900;
+    }
+
+    .order-card-body{
+      padding:17px;
+    }
+
+    .order-product-row{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      padding-bottom:12px;
+      margin-bottom:12px;
+      border-bottom:1px solid #eee;
+    }
+
+    .order-product-row:last-child{
+      border-bottom:0;
+      margin-bottom:0;
+    }
+
+    .order-product-row img{
+      width:60px;
+      height:60px;
+      border-radius:9px;
+      object-fit:cover;
+    }
+
+    .order-product-row h4{
+      font-size:14px;
+    }
+
+    .order-product-row p{
+      font-size:11px;
+      color:#777;
+    }
+
+    .order-total{
+      display:flex;
+      justify-content:space-between;
+      padding-top:14px;
+      margin-top:14px;
+      border-top:1px solid #ddd;
+      font-weight:900;
+    }
+
+    .shipping-card{
+      background:#f7f7f7;
+      border-radius:11px;
+      padding:14px;
+      margin-top:14px;
+      font-size:12px;
+    }
+
+    .shipping-card strong{
+      display:block;
+      margin-bottom:5px;
+    }
+
+    .search-order{
+      display:flex;
+      gap:8px;
+      margin-bottom:20px;
+    }
+
+    .search-order button{
+      white-space:nowrap;
+    }
+
+    .order-message{
+      background:#f6f6f6;
+      border-radius:10px;
+      padding:12px;
+      font-size:12px;
+      color:#666;
+      margin-bottom:18px;
+    }
+
+    /* ================= TOAST ================= */
+
+    .toast{
+      position:fixed;
+      bottom:22px;
+      right:22px;
+      background:#111;
+      color:#fff;
+      padding:13px 18px;
+      border-radius:10px;
+      z-index:3000;
+      display:none;
+      font-size:13px;
+      box-shadow:0 10px 30px rgba(0,0,0,.2);
+    }
+
+    .toast.show{
+      display:block;
+    }
+
+    /* ================= RESPONSIVE ================= */
+
+    @media(max-width:1050px){
+      .products{
+        grid-template-columns:repeat(3,1fr);
+      }
+    }
+
+    @media(max-width:800px){
+      .nav-links{
+        display:none;
+      }
+
+      .products{
+        grid-template-columns:repeat(2,1fr);
+      }
+
+      .about-grid{
+        grid-template-columns:1fr;
+        gap:35px;
+      }
+
+      .hero{
+        min-height:540px;
+      }
+
+      .hero h1{
+        letter-spacing:-3px;
+      }
+    }
+
+    @media(max-width:580px){
+      section{
+        padding:65px 15px;
+      }
+
+      .nav{
+        padding:0 13px;
+      }
+
+      .logo{
+        font-size:19px;
+      }
+
+      .nav-btn{
+        padding:8px 10px;
+        font-size:11px;
+      }
+
+      .hero-inner{
+        padding:70px 18px;
+      }
+
+      .hero h1{
+        font-size:48px;
+      }
+
+      .hero p{
+        font-size:15px;
+      }
+
+      .products{
+        grid-template-columns:1fr;
+      }
+
+      .product-image{
+        height:390px;
+      }
+
+      .section-heading{
+        display:block;
+      }
+
+      .section-heading h2{
+        font-size:34px;
+        margin-bottom:12px;
+      }
+
+      .form-grid{
+        grid-template-columns:1fr;
+      }
+
+      .form-group.full{
+        grid-column:auto;
+      }
+
+      .modal{
+        padding:8px;
+      }
+
+      .modal-box{
+        border-radius:16px;
+      }
+
+      .modal-body{
+        padding:17px;
+      }
+
+      .modal-header{
+        padding:17px;
+      }
+
+      .modal-footer{
+        padding:15px;
+        display:block;
+      }
+
+      .modal-footer-right{
+        margin-top:10px;
+      }
+
+      .modal-footer-right button{
+        flex:1;
+      }
+
+      .review-product img{
+        width:65px;
+        height:65px;
+      }
+
+      .address-box{
+        display:block;
+      }
+
+      .copy-btn{
+        width:100%;
+        padding:12px;
+        margin-top:7px;
+      }
+
+      .order-card-header{
+        align-items:flex-start;
+        flex-direction:column;
+      }
+
+      .search-order{
+        flex-direction:column;
+      }
+
+      .footer-right{
+        text-align:left;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ================= NAVIGATION ================= -->
+
+  <header>
+    <nav class="nav">
+
+      <a href="#home" class="logo">
+        TrailerPark Trav
+      </a>
+
+      <div class="nav-links">
+        <a href="#home">Home</a>
+        <a href="#shop">Shop</a>
+        <a href="#about">About</a>
+      </div>
+
+      <div class="nav-actions">
+        <button class="nav-btn" onclick="openOrders()">
+          My Orders
+        </button>
+
+        <button class="nav-btn cart-btn" onclick="openReview()">
+          Cart (<span id="cartCount">0</span>)
+        </button>
+      </div>
+
+    </nav>
+  </header>
+
+
+  <!-- ================= HERO ================= -->
+
+  <main>
+
+    <section class="hero" id="home">
+
+      <div class="hero-inner">
+
+        <div class="hero-small">
+          TrailerPark Trav
+        </div>
+
+        <h1>
+          Wear it.<br>
+          Make it yours.
+        </h1>
+
+        <p>
+          Premium hoodies made for your style. Choose your hoodie,
+          customize it, add your shipping details and pay securely.
+        </p>
+
+        <div class="hero-buttons">
+
+          <a href="#shop" class="btn btn-white">
+            Shop Hoodies
+          </a>
+
+          <button class="btn btn-outline" onclick="openOrders()">
+            Track My Order
+          </button>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ================= SHOP ================= -->
+
+    <section id="shop">
+
+      <div class="container">
+
+        <div class="section-heading">
+
+          <div>
+            <div class="hero-small" style="color:#777;margin-bottom:8px;">
+              TrailerPark Trav Collection
+            </div>
+
+            <h2>Shop Hoodies</h2>
+          </div>
+
+          <p>
+            Choose any hoodie and customize the color, size, print,
+            quantity and delivery details before payment.
+          </p>
+
+        </div>
+
+        <div class="products" id="productsGrid"></div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ================= ABOUT ================= -->
+
+    <section class="about" id="about">
+
+      <div class="container about-grid">
+
+        <div>
+
+          <div class="hero-small" style="color:#777;margin-bottom:10px;">
+            About TrailerPark Trav
+          </div>
+
+          <h2>
+            Simple hoodies.<br>
+            Your own style.
+          </h2>
+
+          <p>
+            TrailerPark Trav lets you personalize your hoodie before
+            placing your order.
+          </p>
+
+          <p>
+            Select your size, color, print location, quantity and
+            design instructions. Then enter your complete delivery
+            information and review the order before payment.
+          </p>
+
+        </div>
+
+        <div class="about-boxes">
+
+          <div class="about-box">
+            <strong>11</strong>
+            <span>Hoodie styles available</span>
+          </div>
+
+          <div class="about-box">
+            <strong>Custom</strong>
+            <span>Your design, your instructions</span>
+          </div>
+
+          <div class="about-box">
+            <strong>BTC</strong>
+            <span>Bitcoin Mainnet payments</span>
+          </div>
+
+          <div class="about-box">
+            <strong>USDT</strong>
+            <span>BNB Smart Chain BEP20</span>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- ================= FOOTER ================= -->
+
+  <footer>
+
+    <div class="footer-inner">
+
+      <div>
+        <div class="footer-logo">
+          TrailerPark Trav
+        </div>
+
+        <p>
+          Custom hoodies made for your style.
+        </p>
+      </div>
+
+      <div class="footer-right">
+        © <span id="year"></span> TrailerPark Trav.<br>
+        All rights reserved.
+      </div>
+
+    </div>
+
+  </footer>
+
+
+  <!-- =========================================================
+       CUSTOMIZATION MODAL
+  ========================================================== -->
+
+  <div class="modal" id="customizerModal">
+
+    <div class="modal-box">
+
+      <div class="modal-header">
+
+        <h2>Customize Your Hoodie</h2>
+
+        <button class="close" onclick="closeCustomizer()">
+          ×
+        </button>
+
+      </div>
+
+      <div class="modal-body">
+
+        <div class="selected-product">
+
+          <img id="customProductImage" src="" alt="Hoodie">
+
+          <div>
+            <h3 id="customProductName"></h3>
+            <p id="customProductPrice"></p>
+          </div>
+
+        </div>
+
+
+        <div class="form-grid">
+
+          <div class="form-group">
+
+            <label for="hoodieColor">
+              Hoodie Color
+            </label>
+
+            <select id="hoodieColor">
+              <option value="Black">Black</option>
+              <option value="White">White</option>
+              <option value="Grey">Grey</option>
+              <option value="Navy">Navy</option>
+              <option value="Beige">Beige</option>
+              <option value="Red">Red</option>
+              <option value="Custom / Other">Custom / Other</option>
+            </select>
+
+          </div>
+
+
+          <div class="form-group">
+
+            <label for="hoodieSize">
+              Size
+            </label>
+
+            <select id="hoodieSize">
+              <option value="XS">XS</option>
+              <option value="S">S</option>
+              <option value="M" selected>M</option>
+              <option value="L">L</option>
+              <option value="XL">XL</option>
+              <option value="2XL">2XL</option>
+              <option value="3XL">3XL</option>
+              <option value="4XL">4XL</option>
+            </select>
+
+          </div>
+
+
+          <div class="form-group">
+
+            <label for="printLocation">
+              Print Location
+            </label>
+
+            <select id="printLocation">
+
+              <option value="Front">Front</option>
+              <option value="Back">Back</option>
+              <option value="Front & Back">Front & Back</option>
+              <option value="Left Chest">Left Chest</option>
+              <option value="Sleeve">Sleeve</option>
+              <option value="No Print">No Print</option>
+
+            </select>
+
+          </div>
+
+
+          <div class="form-group">
+
+            <label for="hoodieQuantity">
+              Quantity
+            </label>
+
+            <input
+              type="number"
+              id="hoodieQuantity"
+              min="1"
+              max="50"
+              value="1"
+            >
+
+          </div>
+
+
+          <div class="form-group full">
+
+            <label for="designText">
+              What Should Be Printed?
+            </label>
+
+            <textarea
+              id="designText"
+              placeholder="Example: Print 'TRAILERPARK TRAV' in white letters..."
+            ></textarea>
+
+          </div>
+
+
+          <div class="form-group full">
+
+            <label for="designFile">
+              Upload Your Design (Optional)
+            </label>
+
+            <input
+              type="file"
+              id="designFile"
+              accept="image/*,.pdf"
+            >
+
+          </div>
+
+
+          <div class="form-group full">
+
+            <label for="extraInstructions">
+              Extra Instructions
+            </label>
+
+            <textarea
+              id="extraInstructions"
+              placeholder="Anything else we should know?"
+            ></textarea>
+
+          </div>
+
+        </div>
+
+
+        <!-- ================= SHIPPING ================= -->
+
+        <h3 class="address-title">
+          Delivery Information
+        </h3>
+
+        <div class="form-grid">
+
+          <div class="form-group">
+
+            <label for="customerName">
+              Full Name
+            </label>
+
+            <input
+              id="customerName"
+              type="text"
+              placeholder="John Smith"
+            >
+
+          </div>
+
+
+          <div class="form-group">
+
+            <label for="customerPhone">
+              Phone Number
+            </label>
+
+            <input
+              id="customerPhone"
+              type="tel"
+              placeholder="+1 555 123 4567"
+            >
+
+          </div>
+
+
+          <div class="form-group full">
+
+            <label for="homeAddress">
+              Home / Street Address
+            </label>
+
+            <input
+              id="homeAddress"
+              type="text"
+              placeholder="123 Main Street, Apartment 4"
+            >
+
+          </div>
+
+
+          <div class="form-group">
+
+            <label for="customerCity">
+              City
+            </label>
+
+            <input
+              id="customerCity"
+              type="text"
+              placeholder="Los Angeles"
+            >
+
+          </div>
+
+
+          <div class="form-group">
+
+            <label for="customerState">
+              State / Province
+            </label>
+
+            <input
+              id="customerState"
+              type="text"
+              placeholder="California"
+            >
+
+          </div>
+
+
+          <div class="form-group">
+
+            <label for="customerZip">
+              ZIP / Postal Code
+            </label>
+
+            <input
+              id="customerZip"
+              type="text"
+              placeholder="90001"
+            >
+
+          </div>
+
+
+          <div class="form-group">
+
+            <label for="customerCountry">
+              Country
+            </label>
+
+            <select id="customerCountry">
+
+              <option value="">
+                Select country
+              </option>
+
+              <option value="United States">
+                United States
+              </option>
+
+              <option value="Canada">
+                Canada
+              </option>
+
+              <option value="United Kingdom">
+                United Kingdom
+              </option>
+
+              <option value="Nigeria">
+                Nigeria
+              </option>
+
+              <option value="Australia">
+                Australia
+              </option>
+
+              <option value="Germany">
+                Germany
+              </option>
+
+              <option value="France">
+                France
+              </option>
+
+              <option value="Other">
+                Other
+              </option>
+
+            </select>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <div class="modal-footer">
+
+        <div>
+          <strong id="customizerTotal">
+            $0.00
+          </strong>
+        </div>
+
+        <div class="modal-footer-right">
+
+          <button
+            class="btn btn-outline"
+            onclick="closeCustomizer()"
+          >
+            Cancel
+          </button>
+
+          <button
+            class="btn btn-black"
+            onclick="continueFromCustomizer()"
+          >
+            Continue to Review →
+          </button>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <!-- =========================================================
+       REVIEW MODAL
+  ========================================================== -->
+
+  <div class="modal" id="reviewModal">
+
+    <div class="modal-box">
+
+      <div class="modal-header">
+
+        <h2>Review Your Order</h2>
+
+        <button class="close" onclick="closeReview()">
+          ×
+        </button>
+
+      </div>
+
+      <div class="modal-body">
+
+        <div id="reviewItems"></div>
+
+        <div class="total-box">
+
+          <span>Total</span>
+
+          <span id="reviewTotal">
+            $0.00
+          </span>
+
+        </div>
+
+        <div id="reviewShipping"></div>
+
+      </div>
+
+      <div class="modal-footer">
+
+        <div></div>
+
+        <div class="modal-footer-right">
+
+          <button
+            class="btn btn-outline"
+            onclick="closeReview()"
+          >
+            Continue Shopping
+          </button>
+
+          <button
+            class="btn btn-black"
+            onclick="goToPayment()"
+          >
+            Continue to Payment →
+          </button>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <!-- =========================================================
+       PAYMENT MODAL
+  ========================================================== -->
+
+  <div class="modal" id="paymentModal">
+
+    <div class="modal-box">
+
+      <div class="modal-header">
+
+        <h2>Payment</h2>
+
+        <button class="close" onclick="closePayment()">
+          ×
+        </button>
+
+      </div>
+
+      <div class="modal-body">
+
+        <div class="payment-total">
+
+          <span>Order Total</span>
+
+          <strong id="paymentTotal">
+            $0.00
+          </strong>
+
+        </div>
+
+
+        <div class="payment-tabs">
+
+          <button
+            class="payment-tab active"
+            id="btcTab"
+            onclick="selectPayment('BTC')"
+          >
+            ₿ Bitcoin
+          </button>
+
+          <button
+            class="payment-tab"
+            id="usdtTab"
+            onclick="selectPayment('USDT')"
+          >
+            ₮ USDT BEP20
+          </button>
+
+        </div>
+
+
+        <!-- BTC -->
+
+        <div
+          class="payment-method active"
+          id="btcPayment"
+        >
+
+          <h3>Bitcoin Mainnet</h3>
+
+          <p>
+            Send your payment to this Bitcoin address.
+          </p>
+
+          <div class="qr-wrap">
+
+            <img
+              id="btcQR"
+              src=""
+              alt="Bitcoin QR code"
+            >
+
+          </div>
+
+          <div class="address-box">
+
+            <input
+              id="btcAddress"
+              readonly
+            >
+
+            <button
+              class="copy-btn"
+              onclick="copyAddress('btcAddress')"
+            >
+              Copy
+            </button>
+
+          </div>
+
+        </div>
+
+
+        <!-- USDT -->
+
+        <div
+          class="payment-method"
+          id="usdtPayment"
+        >
+
+          <h3>USDT — BNB Smart Chain</h3>
+
+          <p>
+            Send USDT using the
+            <strong>BEP20 / BNB Smart Chain</strong>
+            network only.
+          </p>
+
+          <div class="qr-wrap">
+
+            <img
+              id="usdtQR"
+              src=""
+              alt="USDT QR code"
+            >
+
+          </div>
+
+          <div class="address-box">
+
+            <input
+              id="usdtAddress"
+              readonly
+            >
+
+            <button
+              class="copy-btn"
+              onclick="copyAddress('usdtAddress')"
+            >
+              Copy
+            </button>
+
+          </div>
+
+        </div>
+
+
+        <div class="payment-warning">
+
+          <strong>Important:</strong>
+          Make sure you send the correct cryptocurrency on the
+          correct network. After sending the payment, paste your
+          transaction hash/TXID below.
+
+        </div>
+
+
+        <div class="form-group" style="margin-top:20px;">
+
+          <label for="txid">
+            Transaction Hash / TXID
+          </label>
+
+          <input
+            id="txid"
+            type="text"
+            placeholder="Paste your transaction hash here"
+          >
+
+        </div>
+
+      </div>
+
+
+      <div class="modal-footer">
+
+        <button
+          class="btn btn-outline"
+          onclick="backToReview()"
+        >
+          ← Back
+        </button>
+
+        <button
+          class="btn btn-green"
+          onclick="submitPayment()"
+        >
+          I Have Paid — Submit Order
+        </button>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <!-- =========================================================
+       SUCCESS MODAL
+  ========================================================== -->
+
+  <div class="modal" id="successModal">
+
+    <div class="modal-box modal-small">
+
+      <div class="success">
+
+        <div class="success-icon">
+          ✓
+        </div>
+
+        <h2>
+          Payment Submitted
+        </h2>
+
+        <p>
+          Your order has been submitted successfully.
+          Your payment is currently awaiting verification.
+        </p>
+
+        <div class="order-number">
+
+          Order Number:<br>
+
+          <span id="successOrderNumber">
+            TPT-000000
+          </span>
+
+        </div>
+
+        <button
+          class="btn btn-black"
+          onclick="viewOrderAfterPayment()"
+        >
+          View My Order
+        </button>
+
+        <button
+          class="btn btn-outline"
+          style="margin-left:7px;"
+          onclick="closeSuccess()"
+        >
+          Close
+        </button>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <!-- =========================================================
+       MY ORDERS MODAL
+  ========================================================== -->
+
+  <div class="modal" id="ordersModal">
+
+    <div class="modal-box">
+
+      <div class="modal-header">
+
+        <h2>My Orders</h2>
+
+        <button class="close" onclick="closeOrders()">
+          ×
+        </button>
+
+      </div>
+
+      <div class="modal-body">
+
+        <div class="order-message">
+          Your orders are saved on this device. Enter an order
+          number below to find a specific order.
+        </div>
+
+        <div class="search-order">
+
+          <input
+            id="orderSearch"
+            type="text"
+            placeholder="Example: TPT-2026-123456"
+          >
+
+          <button
+            class="btn btn-black"
+            onclick="searchOrder()"
+          >
+            Find Order
+          </button>
+
+        </div>
+
+        <div id="ordersList"></div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <div class="toast" id="toast"></div>
+
+
+  <script>
+
+    /* =========================================================
+       TRAILERPARK TRAV CONFIG
+    ========================================================== */
+
+    const BTC_ADDRESS =
+      "bc1qc70xpu4pcaqx0fc72s58t5helzacxhn633jnhw";
+
+    const USDT_ADDRESS =
+      "0xD2d606635621DF8Bd39027742a74213A2A843482";
+
+    const CART_KEY =
+      "trailerParkTravCart";
+
+    const ORDERS_KEY =
+      "trailerParkTravOrders";
+
+
+    /* =========================================================
+       11 HOODIES
+    ========================================================== */
+
+    const products = [
+
+      {
+        id:"tpt-001",
+        name:"Essential Black Hoodie",
+        price:49.99,
+        image:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQULJn1hpP-bjO65f1SviuE31CHE2m2eQuI-KBfQ7xWFg&s=10",
+        tag:"Featured"
+      },
+
+      {
+        id:"tpt-002",
+        name:"Classic Street Hoodie",
+        price:49.99,
+        image:"https://m.media-amazon.com/images/I/81w9ognxdDL._AC_UY1100_.jpg",
+        tag:"Classic"
+      },
+
+      {
+        id:"tpt-003",
+        name:"Black & White Hoodie",
+        price:54.99,
+        image:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTQp_a7cbqekvwKjcoswD8S23u76ZwoFqDh7Wf7NkQlCg&s=10",
+        tag:"Streetwear"
+      },
+
+      {
+        id:"tpt-004",
+        name:"Graphic Street Hoodie",
+        price:54.99,
+        image:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSl32uRgiHuUOkLdmdR2OkjKPlM3I-gBl6WlbeKtCmVSA&s",
+        tag:"Popular"
+      },
+
+      {
+        id:"tpt-005",
+        name:"Premium Pullover Hoodie",
+        price:59.99,
+        image:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQwp9O_1vyFRqUxh8MqK6wakQoNSsB-k8XZOYyyPCLBng&s",
+        tag:"Premium"
+      },
+
+      {
+        id:"tpt-006",
+        name:"Signature Hoodie",
+        price:59.99,
+        image:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQwp9O_1vyFRqUxh8MqK6wakQoNSsB-k8XZOYyyPCLBng&s",
+        tag:"Signature"
+      },
+
+      /* YOUR FIVE NEW IMAGES */
+
+      {
+        id:"tpt-007",
+        name:"Plain Hoodie One",
+        price:44.99,
+        image:"https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcTxVv3mZMwcit3pzABXoz51jyauXaLD_JgnFccXliPrgRvF9tUViJVu-TR1ZnH9oN8gHdRdApGdJ6QGPWcYNLXGpwdWmTum4flL83q8EAzx5g8C1rnSCl5E&usqp=CAc",
+        tag:"Plain"
+      },
+
+      {
+        id:"tpt-008",
+        name:"Plain Hoodie Two",
+        price:44.99,
+        image:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR3vkPtTQCLxWvTXuv_RSHnqI9PDxHBFNMh92kRjkOzFA&s=10",
+        tag:"Plain"
+      },
+
+      {
+        id:"tpt-009",
+        name:"Plain Hoodie Three",
+        price:44.99,
+        image:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQtbh7z6CtpWEc7K3Rsl62nCpTPa0Z6z66eo1nYZp44Kg&s",
+        tag:"Plain"
+      },
+
+      {
+        id:"tpt-010",
+        name:"Plain Hoodie Four",
+        price:44.99,
+        image:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSy4945lNMbSOUmyPOdOhasKwmAqqcpdeiUMLiATrD0iA&s=10",
+        tag:"Plain"
+      },
+
+      {
+        id:"tpt-011",
+        name:"Plain Hoodie Five",
+        price:44.99,
+        image:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQCWz3GkIUqzkGFF28fqXmYEAAwGM-Tx7KYIzt-4sclgw&s=10",
+        tag:"Plain"
+      }
+
+    ];
+
+
+    /* =========================================================
+       STATE
+    ========================================================== */
+
+    let selectedProduct = null;
+
+    let cart = JSON.parse(
+      localStorage.getItem(CART_KEY) || "[]"
+    );
+
+    let selectedPayment = "BTC";
+
+    let lastSubmittedOrder = null;
+
+
+    /* =========================================================
+       RENDER PRODUCTS
+    ========================================================== */
+
+    function renderProducts(){
+
+      const grid =
+        document.getElementById("productsGrid");
+
+      grid.innerHTML = "";
+
+      products.forEach(product => {
+
+        const card =
+          document.createElement("article");
+
+        card.className = "product-card";
+
+        card.innerHTML = `
+
+          <div class="product-image">
+
+            <img
+              src="${escapeHTML(product.image)}"
+              alt="${escapeHTML(product.name)}"
+              loading="lazy"
+              onerror="this.style.display='none'"
+            >
+
+          </div>
+
+          <div class="product-info">
+
+            <span class="product-tag">
+              ${escapeHTML(product.tag)}
+            </span>
+
+            <h3>
+              ${escapeHTML(product.name)}
+            </h3>
+
+            <p>
+              Customize the color, size, print and design
+              before you purchase.
+            </p>
+
+            <div class="product-bottom">
+
+              <span class="price">
+                $${product.price.toFixed(2)}
+              </span>
+
+              <button
+                class="buy-btn"
+                onclick="openCustomizer('${product.id}')"
+              >
+                Buy & Customize
+              </button>
+
+            </div>
+
+          </div>
+        `;
+
+        grid.appendChild(card);
+
+      });
+
+    }
+
+
+    /* =========================================================
+       CUSTOMIZER
+    ========================================================== */
+
+    function openCustomizer(productId){
+
+      const product =
+        products.find(
+          item => item.id === productId
+        );
+
+      if(!product) return;
+
+      selectedProduct = product;
+
+      document.getElementById(
+        "customProductImage"
+      ).src = product.image;
+
+      document.getElementById(
+        "customProductName"
+      ).textContent = product.name;
+
+      document.getElementById(
+        "customProductPrice"
+      ).textContent =
+        "$" + product.price.toFixed(2) + " each";
+
+      document.getElementById(
+        "hoodieQuantity"
+      ).value = 1;
+
+      document.getElementById(
+        "hoodieColor"
+      ).value = "Black";
+
+      document.getElementById(
+        "hoodieSize"
+      ).value = "M";
+
+      document.getElementById(
+        "printLocation"
+      ).value = "Front";
+
+      document.getElementById(
+        "designText"
+      ).value = "";
+
+      document.getElementById(
+        "designFile"
+      ).value = "";
+
+      document.getElementById(
+        "extraInstructions"
+      ).value = "";
+
+      document.getElementById(
+        "customizerModal"
+      ).classList.add("active");
+
+      updateCustomizerTotal();
+
+    }
+
+
+    function closeCustomizer(){
+
+      document.getElementById(
+        "customizerModal"
+      ).classList.remove("active");
+
+    }
+
+
+    function updateCustomizerTotal(){
+
+      if(!selectedProduct) return;
+
+      let quantity =
+        parseInt(
+          document.getElementById(
+            "hoodieQuantity"
+          ).value
+        ) || 1;
+
+      quantity =
+        Math.max(
+          1,
+          Math.min(
+            50,
+            quantity
+          )
+        );
+
+      document.getElementById(
+        "hoodieQuantity"
+      ).value = quantity;
+
+      document.getElementById(
+        "customizerTotal"
+      ).textContent =
+        "$" +
+        (
+          selectedProduct.price *
+          quantity
+        ).toFixed(2);
+
+    }
+
+
+    document.getElementById(
+      "hoodieQuantity"
+    ).addEventListener(
+      "input",
+      updateCustomizerTotal
+    );
+
+
+    function continueFromCustomizer(){
+
+      if(!selectedProduct){
+
+        showToast("Please select a hoodie.");
+
+        return;
+
+      }
+
+      const customerName =
+        document.getElementById(
+          "customerName"
+        ).value.trim();
+
+      const customerPhone =
+        document.getElementById(
+          "customerPhone"
+        ).value.trim();
+
+      const homeAddress =
+        document.getElementById(
+          "homeAddress"
+        ).value.trim();
+
+      const city =
+        document.getElementById(
+          "customerCity"
+        ).value.trim();
+
+      const state =
+        document.getElementById(
+          "customerState"
+        ).value.trim();
+
+      const zip =
+        document.getElementById(
+          "customerZip"
+        ).value.trim();
+
+      const country =
+        document.getElementById(
+          "customerCountry"
+        ).value;
+
+      if(!customerName){
+
+        showToast(
+          "Please enter your full name."
+        );
+
+        return;
+
+      }
+
+      if(!customerPhone){
+
+        showToast(
+          "Please enter your phone number."
+        );
+
+        return;
+
+      }
+
+      if(!homeAddress){
+
+        showToast(
+          "Please enter your home address."
+        );
+
+        return;
+
+      }
+
+      if(!city){
+
+        showToast(
+          "Please enter your city."
+        );
+
+        return;
+
+      }
+
+      if(!state){
+
+        showToast(
+          "Please enter your state/province."
+        );
+
+        return;
+
+      }
+
+      if(!zip){
+
+        showToast(
+          "Please enter your ZIP/postal code."
+        );
+
+        return;
+
+      }
+
+      if(!country){
+
+        showToast(
+          "Please select your country."
+        );
+
+        return;
+
+      }
+
+
+      const quantity =
+        Math.max(
+          1,
+          Math.min(
+            50,
+            parseInt(
+              document.getElementById(
+                "hoodieQuantity"
+              ).value
+            ) || 1
+          )
+        );
+
+
+      const designFile =
+        document.getElementById(
+          "designFile"
+        ).files[0];
+
+
+      const item = {
+
+        id:generateId(),
+
+        productId:selectedProduct.id,
+
+        name:selectedProduct.name,
+
+        price:selectedProduct.price,
+
+        image:selectedProduct.image,
+
+        quantity:quantity,
+
+        customization:{
+
+          color:
+            document.getElementById(
+              "hoodieColor"
+            ).value,
+
+          size:
+            document.getElementById(
+              "hoodieSize"
+            ).value,
+
+          location:
+            document.getElementById(
+              "printLocation"
+            ).value,
+
+          design:
+            document.getElementById(
+              "designText"
+            ).value.trim(),
+
+          fileName:
+            designFile
+              ? designFile.name
+              : "",
+
+          extra:
+            document.getElementById(
+              "extraInstructions"
+            ).value.trim()
+
+        },
+
+        shipping:{
+
+          name:customerName,
+
+          phone:customerPhone,
+
+          address:homeAddress,
+
+          city:city,
+
+          state:state,
+
+          zip:zip,
+
+          country:country
+
+        }
+
+      };
+
+
+      cart.push(item);
+
+      saveCart();
+
+      closeCustomizer();
+
+      openReview();
+
+    }
+
+
+    /* =========================================================
+       CART
+    ========================================================== */
+
+    function saveCart(){
+
+      localStorage.setItem(
+        CART_KEY,
+        JSON.stringify(cart)
+      );
+
+      updateCartCount();
+
+    }
+
+
+    function updateCartCount(){
+
+      const count =
+        cart.reduce(
+          (sum,item) =>
+            sum + Number(item.quantity || 0),
+          0
+        );
+
+      document.getElementById(
+        "cartCount"
+      ).textContent = count;
+
+    }
+
+
+    function getCartTotal(){
+
+      return cart.reduce(
+        (total,item) =>
+          total +
+          (
+            Number(item.price) *
+            Number(item.quantity)
+          ),
+        0
+      );
+
+    }
+
+
+    /* =========================================================
+       REVIEW
+    ========================================================== */
+
+    function openReview(){
+
+      renderReview();
+
+      document.getElementById(
+        "reviewModal"
+      ).classList.add("active");
+
+    }
+
+
+    function closeReview(){
+
+      document.getElementById(
+        "reviewModal"
+      ).classList.remove("active");
+
+    }
+
+
+    function renderReview(){
+
+      const container =
+        document.getElementById(
+          "reviewItems"
+        );
+
+      if(cart.length === 0){
+
+        container.innerHTML = `
+
+          <div class="orders-empty">
+
+            <h3 style="color:#111;margin-bottom:7px;">
+              Your cart is empty
+            </h3>
+
+            <p>
+              Choose a hoodie from the shop to get started.
+            </p>
+
+          </div>
+
+        `;
+
+        document.getElementById(
+          "reviewTotal"
+        ).textContent =
+          "$0.00";
+
+        document.getElementById(
+          "reviewShipping"
+        ).innerHTML = "";
+
+        return;
+
+      }
+
+
+      container.innerHTML = "";
+
+
+      cart.forEach(
+        (item,index) => {
+
+          const div =
+            document.createElement("div");
+
+          div.className =
+            "review-item";
+
+          const c =
+            item.customization || {};
+
+          const s =
+            item.shipping || {};
+
+
+          div.innerHTML = `
+
+            <div class="review-top">
+
+              <div class="review-product">
+
+                <img
+                  src="${escapeHTML(item.image)}"
+                  alt=""
+                >
+
+                <div>
+
+                  <h3>
+                    ${escapeHTML(item.name)}
+                  </h3>
+
+                  <p>
+                    $${Number(item.price).toFixed(2)}
+                    × ${Number(item.quantity)}
+                  </p>
+
+                </div>
+
+              </div>
+
+              <button
+                class="remove-btn"
+                onclick="removeItem(${index})"
+              >
+                Remove
+              </button>
+
+            </div>
+
+
+            <div class="review-details">
+
+              <div>
+                <strong>Color:</strong>
+                ${escapeHTML(c.color || "—")}
+              </div>
+
+              <div>
+                <strong>Size:</strong>
+                ${escapeHTML(c.size || "—")}
+              </div>
+
+              <div>
+                <strong>Print:</strong>
+                ${escapeHTML(c.location || "—")}
+              </div>
+
+              <div>
+                <strong>Design:</strong>
+                ${escapeHTML(c.design || "No custom text")}
+              </div>
+
+              <div>
+                <strong>Design File:</strong>
+                ${escapeHTML(c.fileName || "None")}
+              </div>
+
+              <div>
+                <strong>Extra Instructions:</strong>
+                ${escapeHTML(c.extra || "None")}
+              </div>
+
+              <div>
+                <strong>Delivery:</strong>
+                ${escapeHTML(
+                  [
+                    s.name,
+                    s.address,
+                    s.city,
+                    s.state,
+                    s.zip,
+                    s.country
+                  ]
+                  .filter(Boolean)
+                  .join(", ")
+                )}
+              </div>
+
+            </div>
+
+          `;
+
+          container.appendChild(div);
+
+        }
+      );
+
+
+      document.getElementById(
+        "reviewTotal"
+      ).textContent =
+        "$" +
+        getCartTotal().toFixed(2);
+
+
+      const firstShipping =
+        cart[0]?.shipping;
+
+
+      if(firstShipping){
+
+        document.getElementById(
+          "reviewShipping"
+        ).innerHTML = `
+
+          <div class="shipping-card">
+
+            <strong>
+              Shipping To
+            </strong>
+
+            ${escapeHTML(firstShipping.name)}<br>
+
+            ${escapeHTML(firstShipping.address)}<br>
+
+            ${escapeHTML(firstShipping.city)},
+            ${escapeHTML(firstShipping.state)}
+            ${escapeHTML(firstShipping.zip)}<br>
+
+            ${escapeHTML(firstShipping.country)}<br>
+
+            ${escapeHTML(firstShipping.phone)}
+
+          </div>
+
+        `;
+
+      }
+
+    }
+
+
+    function removeItem(index){
+
+      cart.splice(index,1);
+
+      saveCart();
+
+      renderReview();
+
+      showToast(
+        "Item removed."
+      );
+
+    }
+
+
+    /* =========================================================
+       PAYMENT
+    ========================================================== */
+
+    function goToPayment(){
+
+      if(cart.length === 0){
+
+        showToast(
+          "Your cart is empty."
+        );
+
+        return;
+
+      }
+
+      closeReview();
+
+      openPayment();
+
+    }
+
+
+    function openPayment(){
+
+      document.getElementById(
+        "paymentTotal"
+      ).textContent =
+        "$" +
+        getCartTotal().toFixed(2);
+
+      document.getElementById(
+        "paymentModal"
+      ).classList.add("active");
+
+      document.getElementById(
+        "btcAddress"
+      ).value =
+        BTC_ADDRESS;
+
+      document.getElementById(
+        "usdtAddress"
+      ).value =
+        USDT_ADDRESS;
+
+      generateQRs();
+
+      selectPayment(
+        selectedPayment
+      );
+
+    }
+
+
+    function closePayment(){
+
+      document.getElementById(
+        "paymentModal"
+      ).classList.remove("active");
+
+    }
+
+
+    function backToReview(){
+
+      closePayment();
+
+      openReview();
+
+    }
+
+
+    function selectPayment(method){
+
+      selectedPayment =
+        method;
+
+      document.getElementById(
+        "btcTab"
+      ).classList.toggle(
+        "active",
+        method === "BTC"
+      );
+
+      document.getElementById(
+        "usdtTab"
+      ).classList.toggle(
+        "active",
+        method === "USDT"
+      );
+
+      document.getElementById(
+        "btcPayment"
+      ).classList.toggle(
+        "active",
+        method === "BTC"
+      );
+
+      document.getElementById(
+        "usdtPayment"
+      ).classList.toggle(
+        "active",
+        method === "USDT"
+      );
+
+    }
+
+
+    function generateQRs(){
+
+      const btcQR =
+        "https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=" +
+        encodeURIComponent(
+          BTC_ADDRESS
+        );
+
+      const usdtQR =
+        "https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=" +
+        encodeURIComponent(
+          USDT_ADDRESS
+        );
+
+      document.getElementById(
+        "btcQR"
+      ).src =
+        btcQR;
+
+      document.getElementById(
+        "usdtQR"
+      ).src =
+        usdtQR;
+
+    }
+
+
+    function copyAddress(id){
+
+      const input =
+        document.getElementById(id);
+
+      navigator.clipboard
+        .writeText(input.value)
+        .then(() => {
+
+          showToast(
+            "Payment address copied."
+          );
+
+        })
+        .catch(() => {
+
+          input.select();
+
+          document.execCommand(
+            "copy"
+          );
+
+          showToast(
+            "Payment address copied."
+          );
+
+        });
+
+    }
+
+
+    /* =========================================================
+       SUBMIT PAYMENT
+    ========================================================== */
+
+    function submitPayment(){
+
+      const txid =
+        document.getElementById(
+          "txid"
+        ).value.trim();
+
+
+      if(!txid){
+
+        showToast(
+          "Please enter your transaction hash/TXID."
+        );
+
+        return;
+
+      }
+
+
+      if(cart.length === 0){
+
+        showToast(
+          "Your cart is empty."
+        );
+
+        return;
+
+      }
+
+
+      const orderNumber =
+        createOrderNumber();
+
+
+      const order = {
+
+        orderNumber:
+
+          orderNumber,
+
+        items:
+
+          JSON.parse(
+            JSON.stringify(cart)
+          ),
+
+        total:
+
+          getCartTotal(),
+
+        paymentMethod:
+
+          selectedPayment,
+
+        txid:
+
+          txid,
+
+        status:
+
+          "Awaiting payment verification",
+
+        createdAt:
+
+          new Date().toISOString()
+
+      };
+
+
+      let orders =
+        JSON.parse(
+          localStorage.getItem(
+            ORDERS_KEY
+          ) || "[]"
+        );
+
+
+      orders.unshift(order);
+
+
+      localStorage.setItem(
+        ORDERS_KEY,
+        JSON.stringify(orders)
+      );
+
+
+      lastSubmittedOrder =
+        order;
+
+
+      cart = [];
+
+
+      saveCart();
+
+
+      document.getElementById(
+        "txid"
+      ).value = "";
+
+
+      closePayment();
+
+
+      document.getElementById(
+        "successOrderNumber"
+      ).textContent =
+        orderNumber;
+
+
+      document.getElementById(
+        "successModal"
+      ).classList.add("active");
+
+    }
+
+
+    /* =========================================================
+       SUCCESS
+    ========================================================== */
+
+    function closeSuccess(){
+
+      document.getElementById(
+        "successModal"
+      ).classList.remove("active");
+
+    }
+
+
+    function viewOrderAfterPayment(){
+
+      closeSuccess();
+
+      openOrders();
+
+      if(lastSubmittedOrder){
+
+        document.getElementById(
+          "orderSearch"
+        ).value =
+          lastSubmittedOrder.orderNumber;
+
+        searchOrder();
+
+      }
+
+    }
+
+
+    /* =========================================================
+       ORDERS
+    ========================================================== */
+
+    function openOrders(){
+
+      renderOrders();
+
+      document.getElementById(
+        "ordersModal"
+      ).classList.add("active");
+
+    }
+
+
+    function closeOrders(){
+
+      document.getElementById(
+        "ordersModal"
+      ).classList.remove("active");
+
+    }
+
+
+    function getOrders(){
+
+      return JSON.parse(
+        localStorage.getItem(
+          ORDERS_KEY
+        ) || "[]"
+      );
+
+    }
+
+
+    function renderOrders(){
+
+      const ordersList =
+        document.getElementById(
+          "ordersList"
+        );
+
+      const orders =
+        getOrders();
+
+
+      if(orders.length === 0){
+
+        ordersList.innerHTML = `
+
+          <div class="orders-empty">
+
+            <h3 style="color:#111;margin-bottom:8px;">
+              No orders yet
+            </h3>
+
+            <p>
+              Once you place an order, it will appear here.
+            </p>
+
+          </div>
+
+        `;
+
+        return;
+
+      }
+
+
+      ordersList.innerHTML =
+        orders
+          .map(
+            order =>
+              renderOrderCard(order)
+          )
+          .join("");
+
+    }
+
+
+    function searchOrder(){
+
+      const value =
+        document.getElementById(
+          "orderSearch"
+        ).value
+          .trim()
+          .toUpperCase();
+
+
+      if(!value){
+
+        renderOrders();
+
+        return;
+
+      }
+
+
+      const orders =
+        getOrders();
+
+
+      const matches =
+        orders.filter(
+          order =>
+            String(
+              order.orderNumber
+            ).toUpperCase() === value
+        );
+
+
+      const list =
+        document.getElementById(
+          "ordersList"
+        );
+
+
+      if(matches.length === 0){
+
+        list.innerHTML = `
+
+          <div class="orders-empty">
+
+            <h3 style="color:#111;">
+              Order not found
+            </h3>
+
+            <p>
+              Check the order number and try again.
+            </p>
+
+          </div>
+
+        `;
+
+        return;
+
+      }
+
+
+      list.innerHTML =
+        matches
+          .map(
+            order =>
+              renderOrderCard(order)
+          )
+          .join("");
+
+    }
+
+
+    function renderOrderCard(order){
+
+      const date =
+        new Date(
+          order.createdAt
+        );
+
+
+      const formattedDate =
+        date.toLocaleString(
+          undefined,
+          {
+            dateStyle:"medium",
+            timeStyle:"short"
+          }
+        );
+
+
+      const itemsHTML =
+        order.items
+          .map(
+            item => {
+
+              const c =
+                item.customization || {};
+
+
+              return `
+
+                <div class="order-product-row">
+
+                  <img
+                    src="${escapeHTML(item.image)}"
+                    alt=""
+                  >
+
+                  <div style="flex:1;">
+
+                    <h4>
+                      ${escapeHTML(item.name)}
+                    </h4>
+
+                    <p>
+                      Quantity:
+                      ${Number(item.quantity)}
+
+                      · Size:
+                      ${escapeHTML(c.size || "—")}
+
+                      · Color:
+                      ${escapeHTML(c.color || "—")}
+                    </p>
+
+                    <p>
+                      Print:
+                      ${escapeHTML(c.location || "—")}
+                    </p>
+
+                  </div>
+
+                  <strong>
+                    $${(
+                      Number(item.price) *
+                      Number(item.quantity)
+                    ).toFixed(2)}
+                  </strong>
+
+                </div>
+
+              `;
+
+            }
+          )
+          .join("");
+
+
+      const shipping =
+        order.items[0]?.shipping || {};
+
+
+      return `
+
+        <div class="order-card">
+
+          <div class="order-card-header">
+
+            <div>
+
+              <div class="order-number-small">
+                ${escapeHTML(order.orderNumber)}
+              </div>
+
+              <div class="order-date">
+                ${escapeHTML(formattedDate)}
+              </div>
+
+            </div>
+
+            <span class="status">
+              ${escapeHTML(order.status)}
+            </span>
+
+          </div>
+
+
+          <div class="order-card-body">
+
+            ${itemsHTML}
+
+
+            <div class="order-total">
+
+              <span>Total</span>
+
+              <span>
+                $${Number(order.total).toFixed(2)}
+              </span>
+
+            </div>
+
+
+            <div class="shipping-card">
+
+              <strong>
+                Delivery Address
+              </strong>
+
+              ${escapeHTML(shipping.name || "")}<br>
+
+              ${escapeHTML(shipping.address || "")}<br>
+
+              ${escapeHTML(shipping.city || "")},
+              ${escapeHTML(shipping.state || "")}
+              ${escapeHTML(shipping.zip || "")}<br>
+
+              ${escapeHTML(shipping.country || "")}<br>
+
+              ${escapeHTML(shipping.phone || "")}
+
+            </div>
+
+
+            <div class="shipping-card">
+
+              <strong>
+                Payment
+              </strong>
+
+              Method:
+              ${escapeHTML(order.paymentMethod)}
+              <br>
+
+              TXID:
+              <span style="word-break:break-all;">
+                ${escapeHTML(order.txid)}
+              </span>
+
+            </div>
+
+
+          </div>
+
+        </div>
+
+      `;
+
+    }
+
+
+    /* =========================================================
+       ORDER NUMBER
+    ========================================================== */
+
+    function createOrderNumber(){
+
+      const year =
+        new Date().getFullYear();
+
+      const random =
+        Math.floor(
+          100000 +
+          Math.random() * 900000
+        );
+
+      return `TPT-${year}-${random}`;
+
+    }
+
+
+    /* =========================================================
+       HELPERS
+    ========================================================== */
+
+    function generateId(){
+
+      if(
+        typeof crypto !== "undefined" &&
+        crypto.randomUUID
+      ){
+
+        return crypto.randomUUID();
+
+      }
+
+      return (
+        Date.now() +
+        "-" +
+        Math.random()
+          .toString(36)
+          .substring(2,10)
+      );
+
+    }
+
+
+    function escapeHTML(value){
+
+      return String(value ?? "")
+        .replace(/&/g,"&amp;")
+        .replace(/</g,"&lt;")
+        .replace(/>/g,"&gt;")
+        .replace(/"/g,"&quot;")
+        .replace(/'/g,"&#039;");
+
+    }
+
+
+    function showToast(message){
+
+      const toast =
+        document.getElementById(
+          "toast"
+        );
+
+      toast.textContent =
+        message;
+
+      toast.classList.add(
+        "show"
+      );
+
+      clearTimeout(
+        window.toastTimer
+      );
+
+      window.toastTimer =
+        setTimeout(
+          () => {
+
+            toast.classList.remove(
+              "show"
+            );
+
+          },
+          2800
+        );
+
+    }
+
+
+    /* =========================================================
+       CLOSE MODAL WHEN CLICKING OUTSIDE
+    ========================================================== */
+
+    document
+      .querySelectorAll(".modal")
+      .forEach(modal => {
+
+        modal.addEventListener(
+          "click",
+          event => {
+
+            if(
+              event.target === modal
+            ){
+
+              modal.classList.remove(
+                "active"
+              );
+
+            }
+
+          }
+        );
+
+      });
+
+
+    /* =========================================================
+       INITIALIZE
+    ========================================================== */
+
+    document.getElementById(
+      "year"
+    ).textContent =
+      new Date().getFullYear();
+
+    renderProducts();
+
+    updateCartCount();
+
+  </script>
+
+</body>
+</html>
