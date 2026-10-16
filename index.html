@@ -1069,6 +1069,204 @@
         text-align:left;
       }
     }
+        /* ================= CUSTOMIZER ================= */
+
+    .customizer-grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:28px;
+    }
+
+    .customizer-preview{
+      background:#f4f4f4;
+      border-radius:16px;
+      min-height:360px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:20px;
+      position:relative;
+      overflow:hidden;
+    }
+
+    .customizer-preview img{
+      max-height:350px;
+      width:100%;
+      object-fit:contain;
+    }
+
+    .customizer-placeholder{
+      text-align:center;
+      color:#777;
+    }
+
+    .customizer-controls h3{
+      font-size:18px;
+      margin:18px 0 12px;
+    }
+
+    .customizer-controls h3:first-child{
+      margin-top:0;
+    }
+
+    .color-options{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+    }
+
+    .color-option{
+      width:34px;
+      height:34px;
+      border:3px solid #fff;
+      outline:1px solid #ccc;
+      border-radius:50%;
+      cursor:pointer;
+    }
+
+    .color-option.active{
+      outline:2px solid #111;
+    }
+
+    .size-options{
+      display:flex;
+      gap:8px;
+      flex-wrap:wrap;
+    }
+
+    .size-option{
+      min-width:42px;
+      padding:9px;
+      border:1px solid #ddd;
+      border-radius:8px;
+      background:#fff;
+      font-weight:800;
+    }
+
+    .size-option.active{
+      background:#111;
+      color:#fff;
+      border-color:#111;
+    }
+
+    .upload-help{
+      color:#777;
+      font-size:12px;
+      margin-top:7px;
+    }
+
+    .design-preview{
+      display:none;
+      width:100%;
+      max-height:180px;
+      object-fit:contain;
+      margin-top:12px;
+      border-radius:10px;
+      background:#f5f5f5;
+    }
+
+    .design-preview.visible{
+      display:block;
+    }
+
+    .quantity-control{
+      display:flex;
+      align-items:center;
+      gap:12px;
+    }
+
+    .quantity-control button{
+      width:35px;
+      height:35px;
+      border:1px solid #ddd;
+      border-radius:9px;
+      background:#fff;
+      font-size:18px;
+    }
+
+    .quantity-control span{
+      min-width:22px;
+      text-align:center;
+      font-weight:900;
+    }
+
+    /* ================= GIFT CARD UPLOAD ================= */
+
+    .gift-card-upload{
+      margin:20px 0;
+      padding:18px;
+      border:1px solid #e5e5e5;
+      border-radius:14px;
+      background:#fff;
+    }
+
+    .gift-card-upload h3{
+      margin:0 0 8px;
+      font-size:18px;
+    }
+
+    .gift-card-upload p{
+      margin-bottom:14px;
+      color:#777;
+      font-size:13px;
+    }
+
+    .gift-card-upload label{
+      display:block;
+      margin:14px 0 7px;
+      font-size:12px;
+      font-weight:800;
+    }
+
+    .gift-card-upload select,
+    .gift-card-upload input[type="file"]{
+      display:block;
+      width:100%;
+      padding:12px;
+      border:1px solid #ddd;
+      border-radius:9px;
+      background:#fff;
+    }
+
+    .gift-card-upload .upload-status{
+      margin-top:12px;
+      font-size:13px;
+      overflow-wrap:anywhere;
+    }
+
+    .gift-card-upload .upload-preview{
+      display:none;
+      max-width:180px;
+      max-height:180px;
+      margin-top:12px;
+      border-radius:10px;
+      object-fit:contain;
+    }
+
+    .gift-card-upload .upload-preview.visible{
+      display:block;
+    }
+
+    /* ================= ACCESSIBILITY ================= */
+
+    button:focus-visible,
+    a:focus-visible,
+    input:focus-visible,
+    select:focus-visible,
+    textarea:focus-visible{
+      outline:2px solid #16a34a;
+      outline-offset:3px;
+    }
+
+    @media(max-width:700px){
+      .customizer-grid{
+        grid-template-columns:1fr;
+      }
+
+      .customizer-preview{
+        min-height:260px;
+      }
+    }
   </style>
 </head>
 
@@ -1078,10 +1276,7 @@
 
   <header>
     <nav class="nav">
-
-      <a href="#home" class="logo">
-        TrailerPark Trav
-      </a>
+      <a href="#home" class="logo">TRAILERPARK TRAV.</a>
 
       <div class="nav-links">
         <a href="#home">Home</a>
@@ -1090,2469 +1285,2477 @@
       </div>
 
       <div class="nav-actions">
-        <button class="nav-btn" onclick="openOrders()">
+        <button
+          class="nav-btn"
+          type="button"
+          onclick="openOrders()"
+        >
           My Orders
         </button>
 
-        <button class="nav-btn cart-btn" onclick="openReview()">
+        <button
+          class="nav-btn cart-btn"
+          type="button"
+          onclick="openCart()"
+        >
           Cart (<span id="cartCount">0</span>)
         </button>
       </div>
-
     </nav>
   </header>
-
 
   <!-- ================= HERO ================= -->
 
   <main>
-
     <section class="hero" id="home">
-
       <div class="hero-inner">
-
         <div class="hero-small">
-          TrailerPark Trav
+          TRAILERPARK TRAV STREETWEAR
         </div>
 
-        <h1>
-          Wear it.<br>
-          Make it yours.
-        </h1>
+        <h1>MAKE YOUR<br>OWN STATEMENT.</h1>
 
         <p>
-          Premium hoodies made for your style. Choose your hoodie,
-          customize it, add your shipping details and pay securely.
+          Custom hoodies made for your style.
+          Choose your colour, select your size,
+          and upload your own design to make it yours.
         </p>
 
         <div class="hero-buttons">
-
           <a href="#shop" class="btn btn-white">
-            Shop Hoodies
+            SHOP HOODIES
           </a>
 
-          <button class="btn btn-outline" onclick="openOrders()">
-            Track My Order
+          <button
+            type="button"
+            class="btn btn-outline"
+            onclick="startCustomOrder()"
+          >
+            CUSTOMIZE YOUR HOODIE
           </button>
-
         </div>
-
       </div>
-
     </section>
-
 
     <!-- ================= SHOP ================= -->
 
     <section id="shop">
-
       <div class="container">
-
         <div class="section-heading">
-
           <div>
-            <div class="hero-small" style="color:#777;margin-bottom:8px;">
-              TrailerPark Trav Collection
+            <div class="hero-small" style="color:#777">
+              THE COLLECTION
             </div>
 
-            <h2>Shop Hoodies</h2>
+            <h2>SHOP HOODIES.</h2>
           </div>
 
           <p>
-            Choose any hoodie and customize the color, size, print,
-            quantity and delivery details before payment.
+            Pick your favourite hoodie and personalize it
+            with your preferred colour, size, and design.
           </p>
-
         </div>
 
-        <div class="products" id="productsGrid"></div>
+        <div class="products" id="productsGrid">
 
+          <!-- PRODUCT 1 -->
+
+          <article class="product-card">
+            <div class="product-image">
+              <img
+                src="https://images.unsplash.com/photo-1556821840-3a63f95609a7?auto=format&fit=crop&w=900&q=85"
+                alt="Classic hoodie"
+                loading="lazy"
+              >
+            </div>
+
+            <div class="product-info">
+              <span class="product-tag">BESTSELLER</span>
+
+              <h3>Classic Hoodie</h3>
+
+              <p>
+                Everyday comfort with a clean,
+                timeless streetwear look.
+              </p>
+
+              <div class="product-bottom">
+                <span class="price">₦25,000</span>
+
+                <button
+                  class="buy-btn"
+                  type="button"
+                  onclick="openCustomizer('Classic Hoodie',25000,'https://images.unsplash.com/photo-1556821840-3a63f95609a7?auto=format&fit=crop&w=900&q=85')"
+                >
+                  CUSTOMIZE
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- PRODUCT 2 -->
+
+          <article class="product-card">
+            <div class="product-image">
+              <img
+                src="https://images.unsplash.com/photo-1578681994506-b8f463449011?auto=format&fit=crop&w=900&q=85"
+                alt="Premium oversized hoodie"
+                loading="lazy"
+              >
+            </div>
+
+            <div class="product-info">
+              <span class="product-tag">PREMIUM</span>
+
+              <h3>Oversized Hoodie</h3>
+
+              <p>
+                A relaxed fit designed for
+                a comfortable streetwear style.
+              </p>
+
+              <div class="product-bottom">
+                <span class="price">₦30,000</span>
+
+                <button
+                  class="buy-btn"
+                  type="button"
+                  onclick="openCustomizer('Oversized Hoodie',30000,'https://images.unsplash.com/photo-1578681994506-b8f463449011?auto=format&fit=crop&w=900&q=85')"
+                >
+                  CUSTOMIZE
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- PRODUCT 3 -->
+
+          <article class="product-card">
+            <div class="product-image">
+              <img
+                src="https://images.unsplash.com/photo-1572495641004-28421ae2cebf?auto=format&fit=crop&w=900&q=85"
+                alt="Streetwear hoodie"
+                loading="lazy"
+              >
+            </div>
+
+            <div class="product-info">
+              <span class="product-tag">STREETWEAR</span>
+
+              <h3>Street Edition Hoodie</h3>
+
+              <p>
+                Express your personality with
+                a distinctive everyday look.
+              </p>
+
+              <div class="product-bottom">
+                <span class="price">₦28,000</span>
+
+                <button
+                  class="buy-btn"
+                  type="button"
+                  onclick="openCustomizer('Street Edition Hoodie',28000,'https://images.unsplash.com/photo-1572495641004-28421ae2cebf?auto=format&fit=crop&w=900&q=85')"
+                >
+                  CUSTOMIZE
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- PRODUCT 4 -->
+
+          <article class="product-card">
+            <div class="product-image">
+              <img
+                src="https://images.unsplash.com/photo-1620799140408-edc6dcb6d633?auto=format&fit=crop&w=900&q=85"
+                alt="Minimal hoodie"
+                loading="lazy"
+              >
+            </div>
+
+            <div class="product-info">
+              <span class="product-tag">ESSENTIAL</span>
+
+              <h3>Essential Hoodie</h3>
+
+              <p>
+                Simple, versatile streetwear
+                for everyday wear.
+              </p>
+
+              <div class="product-bottom">
+                <span class="price">₦22,000</span>
+
+                <button
+                  class="buy-btn"
+                  type="button"
+                  onclick="openCustomizer('Essential Hoodie',22000,'https://images.unsplash.com/photo-1620799140408-edc6dcb6d633?auto=format&fit=crop&w=900&q=85')"
+                >
+                  CUSTOMIZE
+                </button>
+              </div>
+            </div>
+          </article>
+
+        </div>
       </div>
-
     </section>
-
 
     <!-- ================= ABOUT ================= -->
 
     <section class="about" id="about">
+      <div class="container">
+        <div class="about-grid">
 
-      <div class="container about-grid">
+          <div>
+            <div
+              class="hero-small"
+              style="color:#777"
+            >
+              ABOUT US
+            </div>
 
-        <div>
+            <h2>YOUR STYLE.<br>YOUR RULES.</h2>
 
-          <div class="hero-small" style="color:#777;margin-bottom:10px;">
-            About TrailerPark Trav
+            <p>
+              TrailerPark Trav is built around
+              individual style and creative expression.
+            </p>
+
+            <p>
+              Choose your hoodie, select your preferred
+              options, and upload a design to personalize
+              your order.
+            </p>
+
+            <a href="#shop" class="btn btn-black"
+               style="display:inline-block;margin-top:10px">
+              EXPLORE THE COLLECTION
+            </a>
           </div>
 
-          <h2>
-            Simple hoodies.<br>
-            Your own style.
-          </h2>
+          <div class="about-boxes">
+            <div class="about-box">
+              <strong>01</strong>
+              <span>Choose your hoodie.</span>
+            </div>
 
-          <p>
-            TrailerPark Trav lets you personalize your hoodie before
-            placing your order.
-          </p>
+            <div class="about-box">
+              <strong>02</strong>
+              <span>Personalize your style.</span>
+            </div>
 
-          <p>
-            Select your size, color, print location, quantity and
-            design instructions. Then enter your complete delivery
-            information and review the order before payment.
-          </p>
+            <div class="about-box">
+              <strong>03</strong>
+              <span>Provide delivery details.</span>
+            </div>
+
+            <div class="about-box">
+              <strong>04</strong>
+              <span>Complete checkout.</span>
+            </div>
+          </div>
 
         </div>
-
-        <div class="about-boxes">
-
-          <div class="about-box">
-            <strong>11</strong>
-            <span>Hoodie styles available</span>
-          </div>
-
-          <div class="about-box">
-            <strong>Custom</strong>
-            <span>Your design, your instructions</span>
-          </div>
-
-          <div class="about-box">
-            <strong>BTC</strong>
-            <span>Bitcoin Mainnet payments</span>
-          </div>
-
-          <div class="about-box">
-            <strong>USDT</strong>
-            <span>BNB Smart Chain BEP20</span>
-          </div>
-
-        </div>
-
       </div>
-
     </section>
 
   </main>
 
-
   <!-- ================= FOOTER ================= -->
 
   <footer>
-
     <div class="footer-inner">
-
       <div>
-        <div class="footer-logo">
-          TrailerPark Trav
-        </div>
+        <div class="footer-logo">TRAILERPARK TRAV.</div>
 
         <p>
-          Custom hoodies made for your style.
+          Custom streetwear. Made for your style.
         </p>
       </div>
 
       <div class="footer-right">
-        © <span id="year"></span> TrailerPark Trav.<br>
-        All rights reserved.
+        <p>© <span id="currentYear"></span> TrailerPark Trav.</p>
+        <p>All rights reserved.</p>
+
+        <p style="margin-top:12px">
+          <a href="#home">Back to top ↑</a>
+        </p>
       </div>
-
     </div>
-
   </footer>
 
+  <!-- ================= HOODIE CUSTOMIZER MODAL ================= -->
 
-  <!-- =========================================================
-       CUSTOMIZATION MODAL
-  ========================================================== -->
-
-  <div class="modal" id="customizerModal">
-
+  <div
+    class="modal"
+    id="customizerModal"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="customizerTitle"
+  >
     <div class="modal-box">
 
       <div class="modal-header">
+        <h2 id="customizerTitle">Customize Your Hoodie</h2>
 
-        <h2>Customize Your Hoodie</h2>
-
-        <button class="close" onclick="closeCustomizer()">
-          ×
+        <button
+          type="button"
+          class="close"
+          aria-label="Close customizer"
+          onclick="closeModal('customizerModal')"
+        >
+          &times;
         </button>
-
       </div>
 
       <div class="modal-body">
 
-        <div class="selected-product">
+        <div class="customizer-grid">
 
-          <img id="customProductImage" src="" alt="Hoodie">
-
-          <div>
-            <h3 id="customProductName"></h3>
-            <p id="customProductPrice"></p>
-          </div>
-
-        </div>
-
-
-        <div class="form-grid">
-
-          <div class="form-group">
-
-            <label for="hoodieColor">
-              Hoodie Color
-            </label>
-
-            <select id="hoodieColor">
-              <option value="Black">Black</option>
-              <option value="White">White</option>
-              <option value="Grey">Grey</option>
-              <option value="Navy">Navy</option>
-              <option value="Beige">Beige</option>
-              <option value="Red">Red</option>
-              <option value="Custom / Other">Custom / Other</option>
-            </select>
-
-          </div>
-
-
-          <div class="form-group">
-
-            <label for="hoodieSize">
-              Size
-            </label>
-
-            <select id="hoodieSize">
-              <option value="XS">XS</option>
-              <option value="S">S</option>
-              <option value="M" selected>M</option>
-              <option value="L">L</option>
-              <option value="XL">XL</option>
-              <option value="2XL">2XL</option>
-              <option value="3XL">3XL</option>
-              <option value="4XL">4XL</option>
-            </select>
-
-          </div>
-
-
-          <div class="form-group">
-
-            <label for="printLocation">
-              Print Location
-            </label>
-
-            <select id="printLocation">
-
-              <option value="Front">Front</option>
-              <option value="Back">Back</option>
-              <option value="Front & Back">Front & Back</option>
-              <option value="Left Chest">Left Chest</option>
-              <option value="Sleeve">Sleeve</option>
-              <option value="No Print">No Print</option>
-
-            </select>
-
-          </div>
-
-
-          <div class="form-group">
-
-            <label for="hoodieQuantity">
-              Quantity
-            </label>
-
-            <input
-              type="number"
-              id="hoodieQuantity"
-              min="1"
-              max="50"
-              value="1"
+          <div class="customizer-preview">
+            <img
+              id="customizerProductImage"
+              src=""
+              alt="Selected hoodie"
             >
-
           </div>
 
+          <div class="customizer-controls">
 
-          <div class="form-group full">
+            <h3 id="customizerProductName">
+              Selected Hoodie
+            </h3>
 
-            <label for="designText">
-              What Should Be Printed?
-            </label>
-
-            <textarea
-              id="designText"
-              placeholder="Example: Print 'TRAILERPARK TRAV' in white letters..."
-            ></textarea>
-
-          </div>
-
-
-          <div class="form-group full">
-
-            <label for="designFile">
-              Upload Your Design (Optional)
-            </label>
-
-            <input
-              type="file"
-              id="designFile"
-              accept="image/*,.pdf"
+            <p
+              id="customizerProductPrice"
+              class="price"
+              style="margin-bottom:20px"
             >
+              ₦0
+            </p>
+
+            <h3>Choose a colour</h3>
+
+            <div class="color-options">
+              <button
+                class="color-option active"
+                type="button"
+                style="background:#111"
+                data-color="Black"
+                aria-label="Black"
+                onclick="selectColor('Black',this)"
+              ></button>
+
+              <button
+                class="color-option"
+                type="button"
+                style="background:#fff"
+                data-color="White"
+                aria-label="White"
+                onclick="selectColor('White',this)"
+              ></button>
+
+              <button
+                class="color-option"
+                type="button"
+                style="background:#808080"
+                data-color="Grey"
+                aria-label="Grey"
+                onclick="selectColor('Grey',this)"
+              ></button>
+
+              <button
+                class="color-option"
+                type="button"
+                style="background:#172554"
+                data-color="Navy Blue"
+                aria-label="Navy Blue"
+                onclick="selectColor('Navy Blue',this)"
+              ></button>
+
+              <button
+                class="color-option"
+                type="button"
+                style="background:#78350f"
+                data-color="Brown"
+                aria-label="Brown"
+                onclick="selectColor('Brown',this)"
+              ></button>
+
+              <button
+                class="color-option"
+                type="button"
+                style="background:#166534"
+                data-color="Green"
+                aria-label="Green"
+                onclick="selectColor('Green',this)"
+              ></button>
+            </div>
+
+            <h3>Choose a size</h3>
+
+            <div class="size-options">
+              <button
+                type="button"
+                class="size-option active"
+                onclick="selectSize('S',this)"
+              >S</button>
+
+              <button
+                type="button"
+                class="size-option"
+                onclick="selectSize('M',this)"
+              >M</button>
+
+              <button
+                type="button"
+                class="size-option"
+                onclick="selectSize('L',this)"
+              >L</button>
+
+              <button
+                type="button"
+                class="size-option"
+                onclick="selectSize('XL',this)"
+              >XL</button>
+
+              <button
+                type="button"
+                class="size-option"
+                onclick="selectSize('XXL',this)"
+              >XXL</button>
+            </div>
+
+            <h3>Quantity</h3>
+
+            <div class="quantity-control">
+              <button
+                type="button"
+                onclick="changeQuantity(-1)"
+                aria-label="Decrease quantity"
+              >−</button>
+
+              <span id="customizerQuantity">1</span>
+
+              <button
+                type="button"
+                onclick="changeQuantity(1)"
+                aria-label="Increase quantity"
+              >+</button>
+            </div>
+
+            <h3>Your custom design (optional)</h3>
+
+            <div class="form-group">
+              <label for="designFile">
+                Upload design image
+              </label>
+
+              <input
+                type="file"
+                id="designFile"
+                accept="image/jpeg,image/png,image/webp"
+              >
+
+              <p class="upload-help">
+                JPG, PNG, or WebP. Maximum 5 MB.
+              </p>
+
+              <img
+                id="designPreview"
+                class="design-preview"
+                alt="Custom design preview"
+              >
+            </div>
+
+            <div class="form-group">
+              <label for="customNotes">
+                Custom instructions (optional)
+              </label>
+
+              <textarea
+                id="customNotes"
+                placeholder="Describe your design or any special instructions..."
+              ></textarea>
+            </div>
 
           </div>
-
-
-          <div class="form-group full">
-
-            <label for="extraInstructions">
-              Extra Instructions
-            </label>
-
-            <textarea
-              id="extraInstructions"
-              placeholder="Anything else we should know?"
-            ></textarea>
-
-          </div>
-
-        </div>
-
-
-        <!-- ================= SHIPPING ================= -->
-
-        <h3 class="address-title">
-          Delivery Information
-        </h3>
-
-        <div class="form-grid">
-
-          <div class="form-group">
-
-            <label for="customerName">
-              Full Name
-            </label>
-
-            <input
-              id="customerName"
-              type="text"
-              placeholder="John Smith"
-            >
-
-          </div>
-
-
-          <div class="form-group">
-
-            <label for="customerPhone">
-              Phone Number
-            </label>
-
-            <input
-              id="customerPhone"
-              type="tel"
-              placeholder="+1 555 123 4567"
-            >
-
-          </div>
-
-
-          <div class="form-group full">
-
-            <label for="homeAddress">
-              Home / Street Address
-            </label>
-
-            <input
-              id="homeAddress"
-              type="text"
-              placeholder="123 Main Street, Apartment 4"
-            >
-
-          </div>
-
-
-          <div class="form-group">
-
-            <label for="customerCity">
-              City
-            </label>
-
-            <input
-              id="customerCity"
-              type="text"
-              placeholder="Los Angeles"
-            >
-
-          </div>
-
-
-          <div class="form-group">
-
-            <label for="customerState">
-              State / Province
-            </label>
-
-            <input
-              id="customerState"
-              type="text"
-              placeholder="California"
-            >
-
-          </div>
-
-
-          <div class="form-group">
-
-            <label for="customerZip">
-              ZIP / Postal Code
-            </label>
-
-            <input
-              id="customerZip"
-              type="text"
-              placeholder="90001"
-            >
-
-          </div>
-
-
-          <div class="form-group">
-
-            <label for="customerCountry">
-              Country
-            </label>
-
-            <select id="customerCountry">
-
-              <option value="">
-                Select country
-              </option>
-
-              <option value="United States">
-                United States
-              </option>
-
-              <option value="Canada">
-                Canada
-              </option>
-
-              <option value="United Kingdom">
-                United Kingdom
-              </option>
-
-              <option value="Nigeria">
-                Nigeria
-              </option>
-
-              <option value="Australia">
-                Australia
-              </option>
-
-              <option value="Germany">
-                Germany
-              </option>
-
-              <option value="France">
-                France
-              </option>
-
-              <option value="Other">
-                Other
-              </option>
-
-            </select>
-
-          </div>
-
         </div>
 
       </div>
 
-
       <div class="modal-footer">
-
         <div>
-          <strong id="customizerTotal">
-            $0.00
-          </strong>
+          <div style="font-size:12px;color:#777">
+            Item subtotal
+          </div>
+
+          <div
+            class="price"
+            id="customizerSubtotal"
+          >
+            ₦0
+          </div>
         </div>
 
         <div class="modal-footer-right">
-
           <button
+            type="button"
             class="btn btn-outline"
-            onclick="closeCustomizer()"
+            onclick="closeModal('customizerModal')"
           >
             Cancel
           </button>
 
           <button
+            type="button"
             class="btn btn-black"
             onclick="continueFromCustomizer()"
           >
-            Continue to Review →
+            CONTINUE
           </button>
-
         </div>
-
       </div>
 
     </div>
-
   </div>
+    <!-- ================= CART & SHIPPING MODAL ================= -->
 
-
-  <!-- =========================================================
-       REVIEW MODAL
-  ========================================================== -->
-
-  <div class="modal" id="reviewModal">
-
+  <div
+    class="modal"
+    id="cartModal"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="cartTitle"
+  >
     <div class="modal-box">
 
       <div class="modal-header">
+        <h2 id="cartTitle">Your Shopping Cart</h2>
 
-        <h2>Review Your Order</h2>
-
-        <button class="close" onclick="closeReview()">
-          ×
-        </button>
-
+        <button
+          type="button"
+          class="close"
+          aria-label="Close cart"
+          onclick="closeModal('cartModal')"
+        >&times;</button>
       </div>
 
       <div class="modal-body">
 
-        <div id="reviewItems"></div>
+        <div id="cartItems">
+          <div class="orders-empty">
+            Your cart is empty.
+          </div>
+        </div>
 
         <div class="total-box">
-
-          <span>Total</span>
-
-          <span id="reviewTotal">
-            $0.00
-          </span>
-
+          <span>Subtotal</span>
+          <span id="cartSubtotal">₦0</span>
         </div>
 
-        <div id="reviewShipping"></div>
+        <p style="font-size:12px;color:#777;margin-top:8px">
+          Delivery charges, if applicable, will be confirmed
+          before your order is fulfilled.
+        </p>
+
+        <!-- DELIVERY DETAILS -->
+
+        <h3 class="address-title">
+          Shipping Information
+        </h3>
+
+        <form id="shippingForm">
+
+          <div class="form-grid">
+
+            <div class="form-group">
+              <label for="shippingName">Full Name *</label>
+
+              <input
+                type="text"
+                id="shippingName"
+                name="shippingName"
+                autocomplete="name"
+                placeholder="Enter your full name"
+                required
+              >
+            </div>
+
+            <div class="form-group">
+              <label for="shippingEmail">Email Address *</label>
+
+              <input
+                type="email"
+                id="shippingEmail"
+                name="shippingEmail"
+                autocomplete="email"
+                placeholder="you@example.com"
+                required
+              >
+            </div>
+
+            <div class="form-group">
+              <label for="shippingPhone">Phone Number *</label>
+
+              <input
+                type="tel"
+                id="shippingPhone"
+                name="shippingPhone"
+                autocomplete="tel"
+                placeholder="Your phone number"
+                required
+              >
+            </div>
+
+            <div class="form-group">
+              <label for="shippingCountry">Country *</label>
+
+              <select
+                id="shippingCountry"
+                name="shippingCountry"
+                autocomplete="country-name"
+                required
+              >
+                <option value="">Select country</option>
+                <option value="Nigeria">Nigeria</option>
+                <option value="Ghana">Ghana</option>
+                <option value="United States">United States</option>
+                <option value="United Kingdom">United Kingdom</option>
+                <option value="Canada">Canada</option>
+                <option value="Other">Other</option>
+              </select>
+            </div>
+
+            <div class="form-group full">
+              <label for="shippingAddress">
+                Street Address *
+              </label>
+
+              <input
+                type="text"
+                id="shippingAddress"
+                name="shippingAddress"
+                autocomplete="street-address"
+                placeholder="House number and street name"
+                required
+              >
+            </div>
+
+            <div class="form-group">
+              <label for="shippingCity">City *</label>
+
+              <input
+                type="text"
+                id="shippingCity"
+                name="shippingCity"
+                autocomplete="address-level2"
+                placeholder="Town or city"
+                required
+              >
+            </div>
+
+            <div class="form-group">
+              <label for="shippingState">State / Region *</label>
+
+              <input
+                type="text"
+                id="shippingState"
+                name="shippingState"
+                autocomplete="address-level1"
+                placeholder="State or region"
+                required
+              >
+            </div>
+
+            <div class="form-group">
+              <label for="shippingPostal">
+                Postal / ZIP Code
+              </label>
+
+              <input
+                type="text"
+                id="shippingPostal"
+                name="shippingPostal"
+                autocomplete="postal-code"
+                placeholder="Postal code (if applicable)"
+              >
+            </div>
+
+            <div class="form-group">
+              <label for="shippingApartment">
+                Apartment / Unit
+              </label>
+
+              <input
+                type="text"
+                id="shippingApartment"
+                name="shippingApartment"
+                placeholder="Optional"
+              >
+            </div>
+
+            <div class="form-group full">
+              <label for="shippingNotes">
+                Delivery Instructions
+              </label>
+
+              <textarea
+                id="shippingNotes"
+                name="shippingNotes"
+                placeholder="Any additional delivery instructions (optional)"
+              ></textarea>
+            </div>
+
+          </div>
+
+          <div class="modal-footer" style="padding:20px 0 0">
+
+            <button
+              type="button"
+              class="btn btn-outline"
+              onclick="closeModal('cartModal')"
+            >
+              Continue Shopping
+            </button>
+
+            <button
+              type="submit"
+              class="btn btn-black"
+            >
+              CONTINUE TO PAYMENT
+            </button>
+
+          </div>
+
+        </form>
 
       </div>
-
-      <div class="modal-footer">
-
-        <div></div>
-
-        <div class="modal-footer-right">
-
-          <button
-            class="btn btn-outline"
-            onclick="closeReview()"
-          >
-            Continue Shopping
-          </button>
-
-          <button
-            class="btn btn-black"
-            onclick="goToPayment()"
-          >
-            Continue to Payment →
-          </button>
-
-        </div>
-
-      </div>
-
     </div>
-
   </div>
 
 
-  <!-- =========================================================
-       PAYMENT MODAL
-  ========================================================== -->
+  <!-- ================= PAYMENT MODAL ================= -->
 
-  <div class="modal" id="paymentModal">
-
-    <div class="modal-box">
+  <div
+    class="modal"
+    id="paymentModal"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="paymentTitle"
+  >
+    <div class="modal-box modal-small">
 
       <div class="modal-header">
+        <h2 id="paymentTitle">Complete Your Order</h2>
 
-        <h2>Payment</h2>
-
-        <button class="close" onclick="closePayment()">
-          ×
-        </button>
-
+        <button
+          type="button"
+          class="close"
+          aria-label="Close payment"
+          onclick="closeModal('paymentModal')"
+        >&times;</button>
       </div>
 
       <div class="modal-body">
 
         <div class="payment-total">
+          <div>
+            <div style="font-size:12px;color:#bbb">
+              ORDER TOTAL
+            </div>
 
-          <span>Order Total</span>
+            <strong>Amount Due</strong>
+          </div>
 
-          <strong id="paymentTotal">
-            $0.00
-          </strong>
-
+          <strong id="paymentTotal">₦0</strong>
         </div>
 
+        <h3 style="margin-bottom:14px">
+          Select Payment Method
+        </h3>
 
         <div class="payment-tabs">
 
           <button
+            type="button"
             class="payment-tab active"
-            id="btcTab"
-            onclick="selectPayment('BTC')"
+            id="cryptoTab"
+            onclick="selectPaymentMethod('crypto')"
           >
-            ₿ Bitcoin
+            Cryptocurrency
           </button>
 
           <button
+            type="button"
             class="payment-tab"
-            id="usdtTab"
-            onclick="selectPayment('USDT')"
+            id="bankTab"
+            onclick="selectPaymentMethod('bank')"
           >
-            ₮ USDT BEP20
+            Bank Transfer
           </button>
 
         </div>
 
-
-        <!-- BTC -->
+        <!-- CRYPTOCURRENCY PAYMENT -->
 
         <div
           class="payment-method active"
-          id="btcPayment"
+          id="cryptoPayment"
         >
-
-          <h3>Bitcoin Mainnet</h3>
+          <h3>Cryptocurrency Payment</h3>
 
           <p>
-            Send your payment to this Bitcoin address.
+            Follow the payment instructions supplied by
+            the store before making a transfer.
           </p>
 
-          <div class="qr-wrap">
+          <div class="form-group">
+            <label for="cryptoNetwork">
+              Network
+            </label>
 
-            <img
-              id="btcQR"
-              src=""
-              alt="Bitcoin QR code"
-            >
+            <select id="cryptoNetwork">
+              <option value="USDT TRC20">
+                USDT — TRON (TRC20)
+              </option>
 
+              <option value="USDT ERC20">
+                USDT — Ethereum (ERC20)
+              </option>
+
+              <option value="Bitcoin">
+                Bitcoin (BTC)
+              </option>
+            </select>
           </div>
 
-          <div class="address-box">
+          <div class="form-group">
+            <label for="cryptoAddress">
+              Payment Address
+            </label>
 
-            <input
-              id="btcAddress"
-              readonly
-            >
+            <div class="address-box">
+              <input
+                type="text"
+                id="cryptoAddress"
+                placeholder="Payment address will be provided by the store"
+                readonly
+              >
 
-            <button
-              class="copy-btn"
-              onclick="copyAddress('btcAddress')"
-            >
-              Copy
-            </button>
-
+              <button
+                type="button"
+                class="copy-btn"
+                onclick="copyPaymentAddress()"
+              >
+                COPY
+              </button>
+            </div>
           </div>
 
+          <div class="payment-warning">
+            Confirm the official payment address and network
+            with the store before transferring funds.
+            Cryptocurrency transfers may be irreversible.
+          </div>
         </div>
 
-
-        <!-- USDT -->
+        <!-- BANK TRANSFER PAYMENT -->
 
         <div
           class="payment-method"
-          id="usdtPayment"
+          id="bankPayment"
         >
-
-          <h3>USDT — BNB Smart Chain</h3>
+          <h3>Bank Transfer</h3>
 
           <p>
-            Send USDT using the
-            <strong>BEP20 / BNB Smart Chain</strong>
-            network only.
+            Use the bank details officially supplied by
+            the store to complete your payment.
           </p>
 
-          <div class="qr-wrap">
-
-            <img
-              id="usdtQR"
-              src=""
-              alt="USDT QR code"
-            >
-
-          </div>
-
-          <div class="address-box">
+          <div class="form-group">
+            <label for="bankName">
+              Bank Name
+            </label>
 
             <input
-              id="usdtAddress"
+              type="text"
+              id="bankName"
+              placeholder="Bank details to be configured"
               readonly
             >
-
-            <button
-              class="copy-btn"
-              onclick="copyAddress('usdtAddress')"
-            >
-              Copy
-            </button>
-
           </div>
 
+          <div class="form-group">
+            <label for="bankAccountName">
+              Account Name
+            </label>
+
+            <input
+              type="text"
+              id="bankAccountName"
+              placeholder="Account details to be configured"
+              readonly
+            >
+          </div>
+
+          <div class="form-group">
+            <label for="bankAccountNumber">
+              Account Number
+            </label>
+
+            <input
+              type="text"
+              id="bankAccountNumber"
+              placeholder="Account details to be configured"
+              readonly
+            >
+          </div>
+
+          <div class="payment-warning">
+            Bank transfer is not configured until valid
+            recipient details are supplied by the store.
+          </div>
         </div>
 
+        <!-- TRANSACTION REFERENCE -->
 
-        <div class="payment-warning">
-
-          <strong>Important:</strong>
-          Make sure you send the correct cryptocurrency on the
-          correct network. After sending the payment, paste your
-          transaction hash/TXID below.
-
-        </div>
-
-
-        <div class="form-group" style="margin-top:20px;">
+        <div class="form-group" style="margin-top:22px">
 
           <label for="txid">
-            Transaction Hash / TXID
+            Transaction Hash / TXID / Reference *
           </label>
 
           <input
-            id="txid"
             type="text"
-            placeholder="Paste your transaction hash here"
+            id="txid"
+            name="txid"
+            placeholder="Enter your transaction reference"
+            autocomplete="off"
+            required
           >
 
+          <p class="upload-help">
+            Enter the reference for your completed payment.
+          </p>
+
         </div>
 
-      </div>
+        <!-- GIFT CARD IMAGE UPLOAD -->
 
+        <div class="gift-card-upload">
 
-      <div class="modal-footer">
+          <h3>Gift Card Details</h3>
+
+          <p>
+            Select the gift card type and upload an image
+            for your order.
+          </p>
+
+          <div class="form-group">
+
+            <label for="giftCardType">
+              Gift Card Type *
+            </label>
+
+            <select id="giftCardType" required>
+              <option value="">Select gift card</option>
+              <option value="Apple">Apple Gift Card</option>
+              <option value="Google Play">
+                Google Play Gift Card
+              </option>
+              <option value="Steam">Steam Gift Card</option>
+              <option value="Amazon">Amazon Gift Card</option>
+              <option value="Xbox">Xbox Gift Card</option>
+              <option value="PlayStation">
+                PlayStation Gift Card
+              </option>
+              <option value="Other">Other Gift Card</option>
+            </select>
+
+          </div>
+
+          <div class="form-group">
+
+            <label for="giftCardImage">
+              Gift Card Image *
+            </label>
+
+            <input
+              type="file"
+              id="giftCardImage"
+              accept="image/jpeg,image/png,image/webp"
+              required
+            >
+
+            <p class="upload-help">
+              Accepted formats: JPG, PNG, and WebP.
+              Maximum file size: 5 MB.
+            </p>
+
+          </div>
+
+          <p
+            id="giftCardUploadStatus"
+            class="upload-status"
+            role="status"
+            aria-live="polite"
+          ></p>
+
+          <img
+            id="giftCardPreview"
+            class="upload-preview"
+            alt="Gift card image preview"
+          >
+
+          <div class="payment-warning">
+            Do not upload a gift card containing a redeemable
+            code until the store's image storage is properly
+            secured. Never share your account password or PIN.
+          </div>
+
+        </div>
+
+        <div class="order-message">
+          Submitting an order records the information entered.
+          It does not independently verify whether a payment
+          has been received.
+        </div>
 
         <button
-          class="btn btn-outline"
-          onclick="backToReview()"
-        >
-          ← Back
-        </button>
-
-        <button
-          class="btn btn-green"
+          type="button"
+          class="btn btn-black"
+          id="submitOrderButton"
+          style="width:100%"
           onclick="submitPayment()"
         >
-          I Have Paid — Submit Order
+          SUBMIT ORDER
         </button>
 
       </div>
-
     </div>
-
   </div>
+    <!-- ================= ORDER HISTORY MODAL ================= -->
 
-
-  <!-- =========================================================
-       SUCCESS MODAL
-  ========================================================== -->
-
-  <div class="modal" id="successModal">
-
-    <div class="modal-box modal-small">
-
-      <div class="success">
-
-        <div class="success-icon">
-          ✓
-        </div>
-
-        <h2>
-          Payment Submitted
-        </h2>
-
-        <p>
-          Your order has been submitted successfully.
-          Your payment is currently awaiting verification.
-        </p>
-
-        <div class="order-number">
-
-          Order Number:<br>
-
-          <span id="successOrderNumber">
-            TPT-000000
-          </span>
-
-        </div>
-
-        <button
-          class="btn btn-black"
-          onclick="viewOrderAfterPayment()"
-        >
-          View My Order
-        </button>
-
-        <button
-          class="btn btn-outline"
-          style="margin-left:7px;"
-          onclick="closeSuccess()"
-        >
-          Close
-        </button>
-
-      </div>
-
-    </div>
-
-  </div>
-
-
-  <!-- =========================================================
-       MY ORDERS MODAL
-  ========================================================== -->
-
-  <div class="modal" id="ordersModal">
-
+  <div
+    class="modal"
+    id="ordersModal"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="ordersTitle"
+  >
     <div class="modal-box">
 
       <div class="modal-header">
+        <h2 id="ordersTitle">My Orders</h2>
 
-        <h2>My Orders</h2>
-
-        <button class="close" onclick="closeOrders()">
-          ×
-        </button>
-
+        <button
+          type="button"
+          class="close"
+          aria-label="Close orders"
+          onclick="closeModal('ordersModal')"
+        >&times;</button>
       </div>
 
       <div class="modal-body">
 
-        <div class="order-message">
-          Your orders are saved on this device. Enter an order
-          number below to find a specific order.
-        </div>
+        <p style="color:#777;font-size:13px;margin-bottom:20px">
+          View orders saved on this device.
+        </p>
 
         <div class="search-order">
-
           <input
-            id="orderSearch"
             type="text"
-            placeholder="Example: TPT-2026-123456"
+            id="orderSearch"
+            placeholder="Enter an order number"
           >
 
           <button
+            type="button"
             class="btn btn-black"
-            onclick="searchOrder()"
+            onclick="searchOrders()"
           >
-            Find Order
+            SEARCH
           </button>
-
         </div>
 
-        <div id="ordersList"></div>
+        <div id="ordersList">
+          <div class="orders-empty">
+            You have no saved orders yet.
+          </div>
+        </div>
 
       </div>
-
     </div>
-
   </div>
 
 
-  <div class="toast" id="toast"></div>
+  <!-- ================= ORDER SUCCESS MODAL ================= -->
 
+  <div
+    class="modal"
+    id="successModal"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="successTitle"
+  >
+    <div class="modal-box modal-small">
+
+      <div class="success">
+
+        <div class="success-icon">✓</div>
+
+        <h2 id="successTitle">Order Submitted!</h2>
+
+        <p>
+          Your order information has been saved on this device.
+          Keep your order number for future reference.
+        </p>
+
+        <div class="order-number">
+          Order Number:
+          <span id="successOrderNumber"></span>
+        </div>
+
+        <button
+          type="button"
+          class="btn btn-black"
+          style="width:100%;margin-bottom:10px"
+          onclick="closeModal('successModal');openOrders()"
+        >
+          VIEW MY ORDERS
+        </button>
+
+        <button
+          type="button"
+          class="btn btn-outline"
+          style="width:100%"
+          onclick="closeModal('successModal')"
+        >
+          CONTINUE SHOPPING
+        </button>
+
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ================= TOAST NOTIFICATION ================= -->
+
+  <div
+    class="toast"
+    id="toast"
+    role="status"
+    aria-live="polite"
+  ></div>
+
+
+  <!-- ================= JAVASCRIPT ================= -->
 
   <script>
+    "use strict";
 
-    /* =========================================================
-       TRAILERPARK TRAV CONFIG
-    ========================================================== */
+    /* ================= CONFIGURATION ================= */
 
-    const BTC_ADDRESS =
-      "bc1qc70xpu4pcaqx0fc72s58t5helzacxhn633jnhw";
+    /*
+      Configure your Cloudinary upload preset before testing.
 
-    const USDT_ADDRESS =
-      "0xD2d606635621DF8Bd39027742a74213A2A843482";
+      IMPORTANT:
+      Never put your Cloudinary API secret in this file.
+    */
 
-    const CART_KEY =
-      "trailerParkTravCart";
+    const TP_CLOUDINARY_CLOUD_NAME = "vvrbh1nc";
 
-    const ORDERS_KEY =
-      "trailerParkTravOrders";
-
-
-    /* =========================================================
-       11 HOODIES
-    ========================================================== */
-
-    const products = [
-
-      {
-        id:"tpt-001",
-        name:"Essential Black Hoodie",
-        price:49.99,
-        image:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQULJn1hpP-bjO65f1SviuE31CHE2m2eQuI-KBfQ7xWFg&s=10",
-        tag:"Featured"
-      },
-
-      {
-        id:"tpt-002",
-        name:"Classic Street Hoodie",
-        price:49.99,
-        image:"https://m.media-amazon.com/images/I/81w9ognxdDL._AC_UY1100_.jpg",
-        tag:"Classic"
-      },
-
-      {
-        id:"tpt-003",
-        name:"Black & White Hoodie",
-        price:54.99,
-        image:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTQp_a7cbqekvwKjcoswD8S23u76ZwoFqDh7Wf7NkQlCg&s=10",
-        tag:"Streetwear"
-      },
-
-      {
-        id:"tpt-004",
-        name:"Graphic Street Hoodie",
-        price:54.99,
-        image:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSl32uRgiHuUOkLdmdR2OkjKPlM3I-gBl6WlbeKtCmVSA&s",
-        tag:"Popular"
-      },
-
-      {
-        id:"tpt-005",
-        name:"Premium Pullover Hoodie",
-        price:59.99,
-        image:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQwp9O_1vyFRqUxh8MqK6wakQoNSsB-k8XZOYyyPCLBng&s",
-        tag:"Premium"
-      },
-
-      {
-        id:"tpt-006",
-        name:"Signature Hoodie",
-        price:59.99,
-        image:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQwp9O_1vyFRqUxh8MqK6wakQoNSsB-k8XZOYyyPCLBng&s",
-        tag:"Signature"
-      },
-
-      /* YOUR FIVE NEW IMAGES */
-
-      {
-        id:"tpt-007",
-        name:"Plain Hoodie One",
-        price:44.99,
-        image:"https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcTxVv3mZMwcit3pzABXoz51jyauXaLD_JgnFccXliPrgRvF9tUViJVu-TR1ZnH9oN8gHdRdApGdJ6QGPWcYNLXGpwdWmTum4flL83q8EAzx5g8C1rnSCl5E&usqp=CAc",
-        tag:"Plain"
-      },
-
-      {
-        id:"tpt-008",
-        name:"Plain Hoodie Two",
-        price:44.99,
-        image:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR3vkPtTQCLxWvTXuv_RSHnqI9PDxHBFNMh92kRjkOzFA&s=10",
-        tag:"Plain"
-      },
-
-      {
-        id:"tpt-009",
-        name:"Plain Hoodie Three",
-        price:44.99,
-        image:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQtbh7z6CtpWEc7K3Rsl62nCpTPa0Z6z66eo1nYZp44Kg&s",
-        tag:"Plain"
-      },
-
-      {
-        id:"tpt-010",
-        name:"Plain Hoodie Four",
-        price:44.99,
-        image:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSy4945lNMbSOUmyPOdOhasKwmAqqcpdeiUMLiATrD0iA&s=10",
-        tag:"Plain"
-      },
-
-      {
-        id:"tpt-011",
-        name:"Plain Hoodie Five",
-        price:44.99,
-        image:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQCWz3GkIUqzkGFF28fqXmYEAAwGM-Tx7KYIzt-4sclgw&s=10",
-        tag:"Plain"
-      }
-
-    ];
+    const TP_CLOUDINARY_UPLOAD_PRESET =
+      "trailerpark_giftcards";
 
 
-    /* =========================================================
-       STATE
-    ========================================================== */
+    /* ================= STORE STATE ================= */
 
-    let selectedProduct = null;
+    const CART_KEY = "trailerpark_trav_cart";
+    const ORDERS_KEY = "trailerpark_trav_orders";
 
-    let cart = JSON.parse(
-      localStorage.getItem(CART_KEY) || "[]"
-    );
-
-    let selectedPayment = "BTC";
-
+    let cart = [];
+    let selectedPayment = "crypto";
     let lastSubmittedOrder = null;
 
+    let currentProduct = {
+      name: "",
+      price: 0,
+      image: ""
+    };
 
-    /* =========================================================
-       RENDER PRODUCTS
-    ========================================================== */
+    let selectedColor = "Black";
+    let selectedSize = "S";
+    let selectedQuantity = 1;
 
-    function renderProducts(){
+    let toastTimer = null;
 
-      const grid =
-        document.getElementById("productsGrid");
 
-      grid.innerHTML = "";
+    /* ================= HELPERS ================= */
 
-      products.forEach(product => {
-
-        const card =
-          document.createElement("article");
-
-        card.className = "product-card";
-
-        card.innerHTML = `
-
-          <div class="product-image">
-
-            <img
-              src="${escapeHTML(product.image)}"
-              alt="${escapeHTML(product.name)}"
-              loading="lazy"
-              onerror="this.style.display='none'"
-            >
-
-          </div>
-
-          <div class="product-info">
-
-            <span class="product-tag">
-              ${escapeHTML(product.tag)}
-            </span>
-
-            <h3>
-              ${escapeHTML(product.name)}
-            </h3>
-
-            <p>
-              Customize the color, size, print and design
-              before you purchase.
-            </p>
-
-            <div class="product-bottom">
-
-              <span class="price">
-                $${product.price.toFixed(2)}
-              </span>
-
-              <button
-                class="buy-btn"
-                onclick="openCustomizer('${product.id}')"
-              >
-                Buy & Customize
-              </button>
-
-            </div>
-
-          </div>
-        `;
-
-        grid.appendChild(card);
-
-      });
-
+    function formatPrice(amount) {
+      return new Intl.NumberFormat("en-NG", {
+        style: "currency",
+        currency: "NGN",
+        maximumFractionDigits: 0
+      }).format(Number(amount) || 0);
     }
 
 
-    /* =========================================================
-       CUSTOMIZER
-    ========================================================== */
+    function createOrderNumber() {
+      const date = new Date();
 
-    function openCustomizer(productId){
+      const datePart = [
+        date.getFullYear(),
+        String(date.getMonth() + 1).padStart(2, "0"),
+        String(date.getDate()).padStart(2, "0")
+      ].join("");
 
-      const product =
-        products.find(
-          item => item.id === productId
+      const randomPart = Math.random()
+        .toString(36)
+        .slice(2, 8)
+        .toUpperCase();
+
+      return "TPT-" + datePart + "-" + randomPart;
+    }
+
+
+    function escapeHTML(value) {
+      return String(value ?? "").replace(
+        /[&<>"']/g,
+        character => ({
+          "&": "&amp;",
+          "<": "&lt;",
+          ">": "&gt;",
+          '"': "&quot;",
+          "'": "&#39;"
+        })[character]
+      );
+    }
+
+
+    function showToast(message) {
+      const toast = document.getElementById("toast");
+
+      if (!toast) {
+        alert(message);
+        return;
+      }
+
+      toast.textContent = message;
+      toast.classList.add("show");
+
+      clearTimeout(toastTimer);
+
+      toastTimer = setTimeout(() => {
+        toast.classList.remove("show");
+      }, 3500);
+    }
+
+
+    function openModal(id) {
+      const modal = document.getElementById(id);
+
+      if (modal) {
+        modal.classList.add("active");
+        document.body.style.overflow = "hidden";
+      }
+    }
+
+
+    function closeModal(id) {
+      const modal = document.getElementById(id);
+
+      if (modal) {
+        modal.classList.remove("active");
+      }
+
+      if (!document.querySelector(".modal.active")) {
+        document.body.style.overflow = "";
+      }
+    }
+
+
+    function saveCart() {
+      try {
+        localStorage.setItem(
+          CART_KEY,
+          JSON.stringify(cart)
         );
 
-      if(!product) return;
+        updateCartCount();
+      } catch (error) {
+        console.error("Could not save cart:", error);
 
-      selectedProduct = product;
-
-      document.getElementById(
-        "customProductImage"
-      ).src = product.image;
-
-      document.getElementById(
-        "customProductName"
-      ).textContent = product.name;
-
-      document.getElementById(
-        "customProductPrice"
-      ).textContent =
-        "$" + product.price.toFixed(2) + " each";
-
-      document.getElementById(
-        "hoodieQuantity"
-      ).value = 1;
-
-      document.getElementById(
-        "hoodieColor"
-      ).value = "Black";
-
-      document.getElementById(
-        "hoodieSize"
-      ).value = "M";
-
-      document.getElementById(
-        "printLocation"
-      ).value = "Front";
-
-      document.getElementById(
-        "designText"
-      ).value = "";
-
-      document.getElementById(
-        "designFile"
-      ).value = "";
-
-      document.getElementById(
-        "extraInstructions"
-      ).value = "";
-
-      document.getElementById(
-        "customizerModal"
-      ).classList.add("active");
-
-      updateCustomizerTotal();
-
+        showToast(
+          "Could not save your cart on this device."
+        );
+      }
     }
 
 
-    function closeCustomizer(){
-
-      document.getElementById(
-        "customizerModal"
-      ).classList.remove("active");
-
-    }
-
-
-    function updateCustomizerTotal(){
-
-      if(!selectedProduct) return;
-
-      let quantity =
-        parseInt(
-          document.getElementById(
-            "hoodieQuantity"
-          ).value
-        ) || 1;
-
-      quantity =
-        Math.max(
-          1,
-          Math.min(
-            50,
-            quantity
-          )
+    function loadCart() {
+      try {
+        const saved = JSON.parse(
+          localStorage.getItem(CART_KEY) || "[]"
         );
 
-      document.getElementById(
-        "hoodieQuantity"
-      ).value = quantity;
+        cart = Array.isArray(saved) ? saved : [];
+      } catch (error) {
+        cart = [];
+      }
 
-      document.getElementById(
-        "customizerTotal"
-      ).textContent =
-        "$" +
-        (
-          selectedProduct.price *
-          quantity
-        ).toFixed(2);
-
+      updateCartCount();
     }
 
 
-    document.getElementById(
-      "hoodieQuantity"
-    ).addEventListener(
-      "input",
-      updateCustomizerTotal
+    function getCartTotal() {
+      return cart.reduce((total, item) => {
+        return total +
+          (Number(item.price) || 0) *
+          (Number(item.quantity) || 1);
+      }, 0);
+    }
+
+
+    function updateCartCount() {
+      const count = cart.reduce((total, item) => {
+        return total + (Number(item.quantity) || 1);
+      }, 0);
+
+      const element = document.getElementById("cartCount");
+
+      if (element) {
+        element.textContent = count;
+      }
+    }
+
+
+    /* ================= CUSTOMIZER ================= */
+
+    function openCustomizer(name, price, image) {
+      currentProduct = {
+        name: name,
+        price: Number(price),
+        image: image
+      };
+
+      selectedColor = "Black";
+      selectedSize = "S";
+      selectedQuantity = 1;
+
+      document.getElementById(
+        "customizerProductName"
+      ).textContent = name;
+
+      document.getElementById(
+        "customizerProductPrice"
+      ).textContent = formatPrice(price);
+
+      const imageElement = document.getElementById(
+        "customizerProductImage"
+      );
+
+      imageElement.src = image;
+      imageElement.alt = name;
+
+      document.getElementById(
+        "customizerQuantity"
+      ).textContent = selectedQuantity;
+
+      document.getElementById("customNotes").value = "";
+      document.getElementById("designFile").value = "";
+
+      const preview = document.getElementById(
+        "designPreview"
+      );
+
+      if (preview.dataset.previewUrl) {
+        URL.revokeObjectURL(preview.dataset.previewUrl);
+      }
+
+      preview.removeAttribute("src");
+      delete preview.dataset.previewUrl;
+      preview.classList.remove("visible");
+
+      document.querySelectorAll(".color-option").forEach(
+        button => {
+          button.classList.toggle(
+            "active",
+            button.dataset.color === "Black"
+          );
+        }
+      );
+
+      document.querySelectorAll(".size-option").forEach(
+        button => {
+          button.classList.toggle(
+            "active",
+            button.textContent.trim() === "S"
+          );
+        }
+      );
+
+      updateCustomizerSubtotal();
+      openModal("customizerModal");
+    }
+
+
+    function startCustomOrder() {
+      const firstProduct = document.querySelector(
+        ".product-card .buy-btn"
+      );
+
+      if (firstProduct) {
+        firstProduct.click();
+      }
+    }
+
+
+    function selectColor(color, button) {
+      selectedColor = color;
+
+      document.querySelectorAll(".color-option").forEach(
+        item => item.classList.remove("active")
+      );
+
+      if (button) {
+        button.classList.add("active");
+      }
+    }
+
+
+    function selectSize(size, button) {
+      selectedSize = size;
+
+      document.querySelectorAll(".size-option").forEach(
+        item => item.classList.remove("active")
+      );
+
+      if (button) {
+        button.classList.add("active");
+      }
+    }
+
+
+    function changeQuantity(amount) {
+      selectedQuantity = Math.max(
+        1,
+        Math.min(20, selectedQuantity + amount)
+      );
+
+      document.getElementById(
+        "customizerQuantity"
+      ).textContent = selectedQuantity;
+
+      updateCustomizerSubtotal();
+    }
+
+
+    function updateCustomizerSubtotal() {
+      document.getElementById(
+        "customizerSubtotal"
+      ).textContent = formatPrice(
+        currentProduct.price * selectedQuantity
+      );
+    }
+
+
+    /* ================= DESIGN IMAGE PREVIEW ================= */
+
+    document.getElementById("designFile").addEventListener(
+      "change",
+      function () {
+        const file = this.files && this.files[0];
+
+        const preview = document.getElementById(
+          "designPreview"
+        );
+
+        if (preview.dataset.previewUrl) {
+          URL.revokeObjectURL(preview.dataset.previewUrl);
+        }
+
+        preview.removeAttribute("src");
+        delete preview.dataset.previewUrl;
+        preview.classList.remove("visible");
+
+        if (!file) return;
+
+        const allowed = [
+          "image/jpeg",
+          "image/png",
+          "image/webp"
+        ];
+
+        if (!allowed.includes(file.type)) {
+          this.value = "";
+
+          showToast(
+            "Choose a JPG, PNG, or WebP design image."
+          );
+
+          return;
+        }
+
+        if (file.size > 5 * 1024 * 1024) {
+          this.value = "";
+
+          showToast(
+            "Your design image must be 5 MB or smaller."
+          );
+
+          return;
+        }
+
+        const url = URL.createObjectURL(file);
+
+        preview.src = url;
+        preview.dataset.previewUrl = url;
+        preview.classList.add("visible");
+      }
     );
 
 
-    function continueFromCustomizer(){
+    /* ================= ADD TO CART ================= */
 
-      if(!selectedProduct){
-
-        showToast("Please select a hoodie.");
-
+    function continueFromCustomizer() {
+      if (!currentProduct.name || currentProduct.price <= 0) {
+        showToast("Please select a valid product.");
         return;
-
       }
 
-      const customerName =
-        document.getElementById(
-          "customerName"
-        ).value.trim();
+      const designInput = document.getElementById("designFile");
+      const designFile = designInput.files &&
+        designInput.files[0];
 
-      const customerPhone =
-        document.getElementById(
-          "customerPhone"
-        ).value.trim();
-
-      const homeAddress =
-        document.getElementById(
-          "homeAddress"
-        ).value.trim();
-
-      const city =
-        document.getElementById(
-          "customerCity"
-        ).value.trim();
-
-      const state =
-        document.getElementById(
-          "customerState"
-        ).value.trim();
-
-      const zip =
-        document.getElementById(
-          "customerZip"
-        ).value.trim();
-
-      const country =
-        document.getElementById(
-          "customerCountry"
-        ).value;
-
-      if(!customerName){
-
-        showToast(
-          "Please enter your full name."
-        );
-
-        return;
-
-      }
-
-      if(!customerPhone){
-
-        showToast(
-          "Please enter your phone number."
-        );
-
-        return;
-
-      }
-
-      if(!homeAddress){
-
-        showToast(
-          "Please enter your home address."
-        );
-
-        return;
-
-      }
-
-      if(!city){
-
-        showToast(
-          "Please enter your city."
-        );
-
-        return;
-
-      }
-
-      if(!state){
-
-        showToast(
-          "Please enter your state/province."
-        );
-
-        return;
-
-      }
-
-      if(!zip){
-
-        showToast(
-          "Please enter your ZIP/postal code."
-        );
-
-        return;
-
-      }
-
-      if(!country){
-
-        showToast(
-          "Please select your country."
-        );
-
-        return;
-
-      }
-
-
-      const quantity =
-        Math.max(
-          1,
-          Math.min(
-            50,
-            parseInt(
-              document.getElementById(
-                "hoodieQuantity"
-              ).value
-            ) || 1
-          )
-        );
-
-
-      const designFile =
-        document.getElementById(
-          "designFile"
-        ).files[0];
-
+      const notes = document.getElementById(
+        "customNotes"
+      ).value.trim();
 
       const item = {
+        id: "item-" + Date.now() + "-" +
+          Math.random().toString(36).slice(2, 7),
 
-        id:generateId(),
+        name: currentProduct.name,
+        price: currentProduct.price,
+        image: currentProduct.image,
 
-        productId:selectedProduct.id,
+        color: selectedColor,
+        size: selectedSize,
+        quantity: selectedQuantity,
 
-        name:selectedProduct.name,
+        notes: notes,
 
-        price:selectedProduct.price,
+        designName: designFile
+          ? designFile.name
+          : "",
 
-        image:selectedProduct.image,
-
-        quantity:quantity,
-
-        customization:{
-
-          color:
-            document.getElementById(
-              "hoodieColor"
-            ).value,
-
-          size:
-            document.getElementById(
-              "hoodieSize"
-            ).value,
-
-          location:
-            document.getElementById(
-              "printLocation"
-            ).value,
-
-          design:
-            document.getElementById(
-              "designText"
-            ).value.trim(),
-
-          fileName:
-            designFile
-              ? designFile.name
-              : "",
-
-          extra:
-            document.getElementById(
-              "extraInstructions"
-            ).value.trim()
-
-        },
-
-        shipping:{
-
-          name:customerName,
-
-          phone:customerPhone,
-
-          address:homeAddress,
-
-          city:city,
-
-          state:state,
-
-          zip:zip,
-
-          country:country
-
-        }
-
+        /*
+          File contents are not saved by localStorage.
+          Uploading the custom design to permanent storage
+          requires an additional upload implementation.
+        */
+        designData: ""
       };
-
 
       cart.push(item);
 
       saveCart();
 
-      closeCustomizer();
+      closeModal("customizerModal");
 
-      openReview();
+      showToast("Added to cart successfully.");
 
+      renderCart();
     }
 
 
-    /* =========================================================
-       CART
-    ========================================================== */
+    /* ================= CART ================= */
 
-    function saveCart(){
-
-      localStorage.setItem(
-        CART_KEY,
-        JSON.stringify(cart)
-      );
-
-      updateCartCount();
-
+    function openCart() {
+      renderCart();
+      openModal("cartModal");
     }
 
 
-    function updateCartCount(){
+    function renderCart() {
+      const container = document.getElementById("cartItems");
 
-      const count =
-        cart.reduce(
-          (sum,item) =>
-            sum + Number(item.quantity || 0),
-          0
-        );
-
-      document.getElementById(
-        "cartCount"
-      ).textContent = count;
-
-    }
-
-
-    function getCartTotal(){
-
-      return cart.reduce(
-        (total,item) =>
-          total +
-          (
-            Number(item.price) *
-            Number(item.quantity)
-          ),
-        0
-      );
-
-    }
-
-
-    /* =========================================================
-       REVIEW
-    ========================================================== */
-
-    function openReview(){
-
-      renderReview();
-
-      document.getElementById(
-        "reviewModal"
-      ).classList.add("active");
-
-    }
-
-
-    function closeReview(){
-
-      document.getElementById(
-        "reviewModal"
-      ).classList.remove("active");
-
-    }
-
-
-    function renderReview(){
-
-      const container =
-        document.getElementById(
-          "reviewItems"
-        );
-
-      if(cart.length === 0){
-
+      if (!cart.length) {
         container.innerHTML = `
-
           <div class="orders-empty">
-
-            <h3 style="color:#111;margin-bottom:7px;">
-              Your cart is empty
-            </h3>
-
-            <p>
-              Choose a hoodie from the shop to get started.
-            </p>
-
+            Your cart is empty.
+            <br><br>
+            <button
+              type="button"
+              class="btn btn-black"
+              onclick="closeModal('cartModal');document.getElementById('shop').scrollIntoView()"
+            >
+              SHOP NOW
+            </button>
           </div>
-
         `;
 
         document.getElementById(
-          "reviewTotal"
-        ).textContent =
-          "$0.00";
-
-        document.getElementById(
-          "reviewShipping"
-        ).innerHTML = "";
+          "cartSubtotal"
+        ).textContent = formatPrice(0);
 
         return;
-
       }
 
-
-      container.innerHTML = "";
-
-
-      cart.forEach(
-        (item,index) => {
-
-          const div =
-            document.createElement("div");
-
-          div.className =
-            "review-item";
-
-          const c =
-            item.customization || {};
-
-          const s =
-            item.shipping || {};
-
-
-          div.innerHTML = `
-
-            <div class="review-top">
-
-              <div class="review-product">
-
-                <img
-                  src="${escapeHTML(item.image)}"
-                  alt=""
-                >
-
-                <div>
-
-                  <h3>
-                    ${escapeHTML(item.name)}
-                  </h3>
-
-                  <p>
-                    $${Number(item.price).toFixed(2)}
-                    × ${Number(item.quantity)}
-                  </p>
-
-                </div>
-
-              </div>
-
-              <button
-                class="remove-btn"
-                onclick="removeItem(${index})"
+      container.innerHTML = cart.map((item, index) => `
+        <div class="review-item">
+          <div class="review-top">
+            <div class="review-product">
+              <img
+                src="${escapeHTML(item.image)}"
+                alt="${escapeHTML(item.name)}"
               >
-                Remove
-              </button>
 
+              <div>
+                <h3>${escapeHTML(item.name)}</h3>
+
+                <p>
+                  Colour: ${escapeHTML(item.color)}
+                </p>
+
+                <p>
+                  Size: ${escapeHTML(item.size)}
+                </p>
+
+                <p>
+                  Quantity: ${Number(item.quantity) || 1}
+                </p>
+
+                <p>
+                  ${formatPrice(
+                    item.price * item.quantity
+                  )}
+                </p>
+              </div>
             </div>
 
+            <button
+              type="button"
+              class="remove-btn"
+              onclick="removeCartItem(${index})"
+            >
+              REMOVE
+            </button>
+          </div>
 
+          ${item.designName ? `
             <div class="review-details">
-
-              <div>
-                <strong>Color:</strong>
-                ${escapeHTML(c.color || "—")}
-              </div>
-
-              <div>
-                <strong>Size:</strong>
-                ${escapeHTML(c.size || "—")}
-              </div>
-
-              <div>
-                <strong>Print:</strong>
-                ${escapeHTML(c.location || "—")}
-              </div>
-
-              <div>
-                <strong>Design:</strong>
-                ${escapeHTML(c.design || "No custom text")}
-              </div>
-
-              <div>
-                <strong>Design File:</strong>
-                ${escapeHTML(c.fileName || "None")}
-              </div>
-
-              <div>
-                <strong>Extra Instructions:</strong>
-                ${escapeHTML(c.extra || "None")}
-              </div>
-
-              <div>
-                <strong>Delivery:</strong>
-                ${escapeHTML(
-                  [
-                    s.name,
-                    s.address,
-                    s.city,
-                    s.state,
-                    s.zip,
-                    s.country
-                  ]
-                  .filter(Boolean)
-                  .join(", ")
-                )}
-              </div>
-
+              Custom design selected:
+              ${escapeHTML(item.designName)}
             </div>
+          ` : ""}
 
-          `;
+          ${item.notes ? `
+            <div class="review-details">
+              Instructions:
+              ${escapeHTML(item.notes)}
+            </div>
+          ` : ""}
+        </div>
+      `).join("");
 
-          container.appendChild(div);
+      document.getElementById(
+        "cartSubtotal"
+      ).textContent = formatPrice(getCartTotal());
+    }
 
+
+    function removeCartItem(index) {
+      if (index < 0 || index >= cart.length) return;
+
+      cart.splice(index, 1);
+
+      saveCart();
+      renderCart();
+
+      showToast("Item removed from cart.");
+    }
+
+
+    /* ================= SHIPPING FORM ================= */
+
+    document.getElementById("shippingForm").addEventListener(
+      "submit",
+      function (event) {
+        event.preventDefault();
+
+        if (!cart.length) {
+          showToast("Your cart is empty.");
+          return;
         }
-      );
 
+        if (!this.reportValidity()) {
+          return;
+        }
 
-      document.getElementById(
-        "reviewTotal"
-      ).textContent =
-        "$" +
-        getCartTotal().toFixed(2);
+        const shipping = {
+          name: document.getElementById(
+            "shippingName"
+          ).value.trim(),
 
+          email: document.getElementById(
+            "shippingEmail"
+          ).value.trim(),
 
-      const firstShipping =
-        cart[0]?.shipping;
+          phone: document.getElementById(
+            "shippingPhone"
+          ).value.trim(),
 
+          country: document.getElementById(
+            "shippingCountry"
+          ).value,
 
-      if(firstShipping){
+          address: document.getElementById(
+            "shippingAddress"
+          ).value.trim(),
+
+          city: document.getElementById(
+            "shippingCity"
+          ).value.trim(),
+
+          state: document.getElementById(
+            "shippingState"
+          ).value.trim(),
+
+          postal: document.getElementById(
+            "shippingPostal"
+          ).value.trim(),
+
+          apartment: document.getElementById(
+            "shippingApartment"
+          ).value.trim(),
+
+          notes: document.getElementById(
+            "shippingNotes"
+          ).value.trim()
+        };
+
+        sessionStorage.setItem(
+          "trailerpark_trav_pending_shipping",
+          JSON.stringify(shipping)
+        );
 
         document.getElementById(
-          "reviewShipping"
-        ).innerHTML = `
+          "paymentTotal"
+        ).textContent = formatPrice(getCartTotal());
 
-          <div class="shipping-card">
+        closeModal("cartModal");
 
-            <strong>
-              Shipping To
-            </strong>
-
-            ${escapeHTML(firstShipping.name)}<br>
-
-            ${escapeHTML(firstShipping.address)}<br>
-
-            ${escapeHTML(firstShipping.city)},
-            ${escapeHTML(firstShipping.state)}
-            ${escapeHTML(firstShipping.zip)}<br>
-
-            ${escapeHTML(firstShipping.country)}<br>
-
-            ${escapeHTML(firstShipping.phone)}
-
-          </div>
-
-        `;
-
+        openModal("paymentModal");
       }
+    );
 
-    }
 
+    /* ================= PAYMENT METHOD ================= */
 
-    function removeItem(index){
+    function selectPaymentMethod(method) {
+      selectedPayment = method;
 
-      cart.splice(index,1);
-
-      saveCart();
-
-      renderReview();
-
-      showToast(
-        "Item removed."
+      document.getElementById(
+        "cryptoTab"
+      ).classList.toggle(
+        "active",
+        method === "crypto"
       );
 
+      document.getElementById(
+        "bankTab"
+      ).classList.toggle(
+        "active",
+        method === "bank"
+      );
+
+      document.getElementById(
+        "cryptoPayment"
+      ).classList.toggle(
+        "active",
+        method === "crypto"
+      );
+
+      document.getElementById(
+        "bankPayment"
+      ).classList.toggle(
+        "active",
+        method === "bank"
+      );
     }
 
 
-    /* =========================================================
-       PAYMENT
-    ========================================================== */
+    function copyPaymentAddress() {
+      const input = document.getElementById(
+        "cryptoAddress"
+      );
 
-    function goToPayment(){
-
-      if(cart.length === 0){
-
+      if (!input.value.trim()) {
         showToast(
-          "Your cart is empty."
+          "The store has not configured a payment address yet."
         );
 
         return;
-
       }
 
-      closeReview();
+      if (navigator.clipboard &&
+          window.isSecureContext) {
+        navigator.clipboard.writeText(input.value)
+          .then(() => showToast("Address copied."))
+          .catch(() => showToast("Unable to copy address."));
+      } else {
+        input.select();
 
-      openPayment();
-
+        try {
+          document.execCommand("copy");
+          showToast("Address copied.");
+        } catch (error) {
+          showToast("Unable to copy address.");
+        }
+      }
     }
 
 
-    function openPayment(){
+    /* ================= END OF PART 4 ================= */
+        /* ================= CLOUDINARY GIFT CARD UPLOAD ================= */
 
-      document.getElementById(
-        "paymentTotal"
-      ).textContent =
-        "$" +
-        getCartTotal().toFixed(2);
-
-      document.getElementById(
-        "paymentModal"
-      ).classList.add("active");
-
-      document.getElementById(
-        "btcAddress"
-      ).value =
-        BTC_ADDRESS;
-
-      document.getElementById(
-        "usdtAddress"
-      ).value =
-        USDT_ADDRESS;
-
-      generateQRs();
-
-      selectPayment(
-        selectedPayment
+    async function uploadTrailerParkGiftCard() {
+      const typeField = document.getElementById("giftCardType");
+      const imageField = document.getElementById("giftCardImage");
+      const statusField = document.getElementById(
+        "giftCardUploadStatus"
+      );
+      const previewField = document.getElementById(
+        "giftCardPreview"
       );
 
-    }
+      const giftCardType = typeField.value;
+      const file = imageField.files &&
+        imageField.files[0];
 
+      if (!giftCardType) {
+        throw new Error("Please select a gift card type.");
+      }
 
-    function closePayment(){
+      if (!file) {
+        throw new Error("Please upload your gift card image.");
+      }
 
-      document.getElementById(
-        "paymentModal"
-      ).classList.remove("active");
+      const allowedTypes = [
+        "image/jpeg",
+        "image/png",
+        "image/webp"
+      ];
 
-    }
+      if (!allowedTypes.includes(file.type)) {
+        throw new Error(
+          "Upload a JPG, PNG, or WebP image."
+        );
+      }
 
+      if (file.size > 5 * 1024 * 1024) {
+        throw new Error(
+          "The image must be 5 MB or smaller."
+        );
+      }
 
-    function backToReview(){
+      if (statusField) {
+        statusField.textContent = "Uploading image...";
+        statusField.style.color = "#555";
+      }
 
-      closePayment();
+      if (previewField) {
+        if (previewField.dataset.previewUrl) {
+          URL.revokeObjectURL(
+            previewField.dataset.previewUrl
+          );
+        }
 
-      openReview();
+        const previewUrl = URL.createObjectURL(file);
 
-    }
+        previewField.src = previewUrl;
+        previewField.dataset.previewUrl = previewUrl;
+        previewField.classList.add("visible");
+      }
 
+      const formData = new FormData();
 
-    function selectPayment(method){
+      formData.append("file", file);
 
-      selectedPayment =
-        method;
-
-      document.getElementById(
-        "btcTab"
-      ).classList.toggle(
-        "active",
-        method === "BTC"
+      formData.append(
+        "upload_preset",
+        TP_CLOUDINARY_UPLOAD_PRESET
       );
 
-      document.getElementById(
-        "usdtTab"
-      ).classList.toggle(
-        "active",
-        method === "USDT"
+      formData.append(
+        "folder",
+        "trailerpark-trav-gift-cards"
       );
 
-      document.getElementById(
-        "btcPayment"
-      ).classList.toggle(
-        "active",
-        method === "BTC"
-      );
-
-      document.getElementById(
-        "usdtPayment"
-      ).classList.toggle(
-        "active",
-        method === "USDT"
-      );
-
-    }
-
-
-    function generateQRs(){
-
-      const btcQR =
-        "https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=" +
-        encodeURIComponent(
-          BTC_ADDRESS
+      try {
+        const response = await fetch(
+          `https://api.cloudinary.com/v1_1/${TP_CLOUDINARY_CLOUD_NAME}/image/upload`,
+          {
+            method: "POST",
+            body: formData
+          }
         );
 
-      const usdtQR =
-        "https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=" +
-        encodeURIComponent(
-          USDT_ADDRESS
-        );
+        const result = await response.json();
 
-      document.getElementById(
-        "btcQR"
-      ).src =
-        btcQR;
+        if (!response.ok) {
+          throw new Error(
+            result.error?.message ||
+            "Cloudinary upload failed."
+          );
+        }
 
-      document.getElementById(
-        "usdtQR"
-      ).src =
-        usdtQR;
+        if (!result.public_id) {
+          throw new Error(
+            "Cloudinary did not return an image reference."
+          );
+        }
 
+        if (statusField) {
+          statusField.textContent =
+            "Image uploaded successfully.";
+
+          statusField.style.color = "green";
+        }
+
+        return {
+          type: giftCardType,
+          publicId: result.public_id,
+          assetId: result.asset_id || "",
+          format: result.format || "",
+          uploadedAt: result.created_at || ""
+        };
+
+      } catch (error) {
+        if (statusField) {
+          statusField.textContent =
+            error.message || "Image upload failed.";
+
+          statusField.style.color = "red";
+        }
+
+        throw error;
+      }
     }
 
 
-    function copyAddress(id){
+    /* ================= SUBMIT ORDER ================= */
 
-      const input =
-        document.getElementById(id);
+    let isSubmittingOrder = false;
 
-      navigator.clipboard
-        .writeText(input.value)
-        .then(() => {
+    async function submitPayment() {
+      if (isSubmittingOrder) {
+        return;
+      }
 
-          showToast(
-            "Payment address copied."
+      if (!cart.length) {
+        showToast("Your cart is empty.");
+        return;
+      }
+
+      const txidField = document.getElementById("txid");
+      const typeField = document.getElementById("giftCardType");
+      const imageField = document.getElementById("giftCardImage");
+      const submitButton = document.getElementById(
+        "submitOrderButton"
+      );
+
+      const txid = txidField.value.trim();
+
+      if (!txid) {
+        showToast(
+          "Please enter your transaction reference."
+        );
+
+        txidField.focus();
+        return;
+      }
+
+      if (!typeField.value) {
+        showToast("Please select a gift card type.");
+        typeField.focus();
+        return;
+      }
+
+      if (!imageField.files || !imageField.files[0]) {
+        showToast("Please upload your gift card image.");
+        imageField.focus();
+        return;
+      }
+
+      let shipping;
+
+      try {
+        shipping = JSON.parse(
+          sessionStorage.getItem(
+            "trailerpark_trav_pending_shipping"
+          ) || "null"
+        );
+      } catch (error) {
+        shipping = null;
+      }
+
+      if (!shipping) {
+        showToast(
+          "Your shipping information is missing. Please try again."
+        );
+
+        closeModal("paymentModal");
+        openCart();
+        return;
+      }
+
+      isSubmittingOrder = true;
+
+      if (submitButton) {
+        submitButton.disabled = true;
+        submitButton.textContent = "UPLOADING...";
+      }
+
+      try {
+        /*
+          Upload the gift card image first.
+          Do not save the order if this upload fails.
+        */
+
+        const giftCard = await uploadTrailerParkGiftCard();
+
+        const orderNumber = createOrderNumber();
+
+        const order = {
+          orderNumber: orderNumber,
+
+          items: JSON.parse(JSON.stringify(cart)),
+
+          total: getCartTotal(),
+
+          paymentMethod: selectedPayment,
+
+          txid: txid,
+
+          shipping: shipping,
+
+          giftCard: {
+            type: giftCard.type,
+            publicId: giftCard.publicId,
+            assetId: giftCard.assetId,
+            format: giftCard.format,
+            uploadedAt: giftCard.uploadedAt
+          },
+
+          status: "Awaiting payment verification",
+
+          createdAt: new Date().toISOString()
+        };
+
+        /*
+          Orders are stored in this browser's localStorage.
+          This is not a server-side order database.
+        */
+
+        let orders = [];
+
+        try {
+          orders = JSON.parse(
+            localStorage.getItem(ORDERS_KEY) || "[]"
           );
 
-        })
-        .catch(() => {
+          if (!Array.isArray(orders)) {
+            orders = [];
+          }
+        } catch (error) {
+          orders = [];
+        }
 
-          input.select();
+        orders.unshift(order);
 
-          document.execCommand(
-            "copy"
-          );
-
-          showToast(
-            "Payment address copied."
-          );
-
-        });
-
-    }
-
-
-    /* =========================================================
-       SUBMIT PAYMENT
-    ========================================================== */
-
-    function submitPayment(){
-
-      const txid =
-        document.getElementById(
-          "txid"
-        ).value.trim();
-
-
-      if(!txid){
-
-        showToast(
-          "Please enter your transaction hash/TXID."
+        localStorage.setItem(
+          ORDERS_KEY,
+          JSON.stringify(orders)
         );
 
-        return;
+        lastSubmittedOrder = order;
 
-      }
+        /* Clear the cart after successful submission. */
 
+        cart = [];
 
-      if(cart.length === 0){
+        saveCart();
 
-        showToast(
-          "Your cart is empty."
+        sessionStorage.removeItem(
+          "trailerpark_trav_pending_shipping"
         );
 
-        return;
+        txidField.value = "";
+        typeField.value = "";
+        imageField.value = "";
 
-      }
-
-
-      const orderNumber =
-        createOrderNumber();
-
-
-      const order = {
-
-        orderNumber:
-
-          orderNumber,
-
-        items:
-
-          JSON.parse(
-            JSON.stringify(cart)
-          ),
-
-        total:
-
-          getCartTotal(),
-
-        paymentMethod:
-
-          selectedPayment,
-
-        txid:
-
-          txid,
-
-        status:
-
-          "Awaiting payment verification",
-
-        createdAt:
-
-          new Date().toISOString()
-
-      };
-
-
-      let orders =
-        JSON.parse(
-          localStorage.getItem(
-            ORDERS_KEY
-          ) || "[]"
+        const previewField = document.getElementById(
+          "giftCardPreview"
         );
 
+        if (previewField) {
+          if (previewField.dataset.previewUrl) {
+            URL.revokeObjectURL(
+              previewField.dataset.previewUrl
+            );
+          }
 
-      orders.unshift(order);
+          previewField.removeAttribute("src");
 
+          delete previewField.dataset.previewUrl;
 
-      localStorage.setItem(
-        ORDERS_KEY,
-        JSON.stringify(orders)
-      );
+          previewField.classList.remove("visible");
+        }
 
-
-      lastSubmittedOrder =
-        order;
-
-
-      cart = [];
-
-
-      saveCart();
-
-
-      document.getElementById(
-        "txid"
-      ).value = "";
-
-
-      closePayment();
-
-
-      document.getElementById(
-        "successOrderNumber"
-      ).textContent =
-        orderNumber;
-
-
-      document.getElementById(
-        "successModal"
-      ).classList.add("active");
-
-    }
-
-
-    /* =========================================================
-       SUCCESS
-    ========================================================== */
-
-    function closeSuccess(){
-
-      document.getElementById(
-        "successModal"
-      ).classList.remove("active");
-
-    }
-
-
-    function viewOrderAfterPayment(){
-
-      closeSuccess();
-
-      openOrders();
-
-      if(lastSubmittedOrder){
-
-        document.getElementById(
-          "orderSearch"
-        ).value =
-          lastSubmittedOrder.orderNumber;
-
-        searchOrder();
-
-      }
-
-    }
-
-
-    /* =========================================================
-       ORDERS
-    ========================================================== */
-
-    function openOrders(){
-
-      renderOrders();
-
-      document.getElementById(
-        "ordersModal"
-      ).classList.add("active");
-
-    }
-
-
-    function closeOrders(){
-
-      document.getElementById(
-        "ordersModal"
-      ).classList.remove("active");
-
-    }
-
-
-    function getOrders(){
-
-      return JSON.parse(
-        localStorage.getItem(
-          ORDERS_KEY
-        ) || "[]"
-      );
-
-    }
-
-
-    function renderOrders(){
-
-      const ordersList =
-        document.getElementById(
-          "ordersList"
+        const uploadStatus = document.getElementById(
+          "giftCardUploadStatus"
         );
 
-      const orders =
-        getOrders();
+        if (uploadStatus) {
+          uploadStatus.textContent = "";
+        }
 
+        closeModal("paymentModal");
 
-      if(orders.length === 0){
-
-        ordersList.innerHTML = `
-
-          <div class="orders-empty">
-
-            <h3 style="color:#111;margin-bottom:8px;">
-              No orders yet
-            </h3>
-
-            <p>
-              Once you place an order, it will appear here.
-            </p>
-
-          </div>
-
-        `;
-
-        return;
-
-      }
-
-
-      ordersList.innerHTML =
-        orders
-          .map(
-            order =>
-              renderOrderCard(order)
-          )
-          .join("");
-
-    }
-
-
-    function searchOrder(){
-
-      const value =
         document.getElementById(
-          "orderSearch"
-        ).value
-          .trim()
-          .toUpperCase();
-
-
-      if(!value){
+          "successOrderNumber"
+        ).textContent = orderNumber;
 
         renderOrders();
 
-        return;
+        openModal("successModal");
 
+      } catch (error) {
+        console.error(
+          "Order submission failed:",
+          error
+        );
+
+        showToast(
+          error.message ||
+          "Order submission failed. Please try again."
+        );
+
+      } finally {
+        isSubmittingOrder = false;
+
+        if (submitButton) {
+          submitButton.disabled = false;
+          submitButton.textContent = "SUBMIT ORDER";
+        }
       }
+    }
 
 
-      const orders =
-        getOrders();
+    /* ================= ORDER HISTORY ================= */
 
-
-      const matches =
-        orders.filter(
-          order =>
-            String(
-              order.orderNumber
-            ).toUpperCase() === value
+    function getSavedOrders() {
+      try {
+        const orders = JSON.parse(
+          localStorage.getItem(ORDERS_KEY) || "[]"
         );
 
+        return Array.isArray(orders) ? orders : [];
 
-      const list =
-        document.getElementById(
-          "ordersList"
-        );
+      } catch (error) {
+        return [];
+      }
+    }
 
 
-      if(matches.length === 0){
+    function openOrders() {
+      renderOrders();
+      openModal("ordersModal");
+    }
 
-        list.innerHTML = `
 
+    function renderOrders(searchTerm = "") {
+      const container = document.getElementById("ordersList");
+
+      const orders = getSavedOrders();
+
+      const term = String(searchTerm)
+        .trim()
+        .toLowerCase();
+
+      const filteredOrders = term
+        ? orders.filter(order =>
+            String(order.orderNumber || "")
+              .toLowerCase()
+              .includes(term)
+          )
+        : orders;
+
+      if (!filteredOrders.length) {
+        container.innerHTML = `
           <div class="orders-empty">
-
-            <h3 style="color:#111;">
-              Order not found
-            </h3>
-
-            <p>
-              Check the order number and try again.
-            </p>
-
+            ${
+              term
+                ? "No orders matched your search."
+                : "You have no saved orders yet."
+            }
           </div>
-
         `;
 
         return;
-
       }
 
+      container.innerHTML = filteredOrders.map(order => {
+        const items = Array.isArray(order.items)
+          ? order.items
+          : [];
 
-      list.innerHTML =
-        matches
-          .map(
-            order =>
-              renderOrderCard(order)
-          )
-          .join("");
+        const shipping = order.shipping || {};
 
-    }
+        const date = order.createdAt
+          ? new Date(order.createdAt).toLocaleString()
+          : "Date unavailable";
 
-
-    function renderOrderCard(order){
-
-      const date =
-        new Date(
-          order.createdAt
-        );
-
-
-      const formattedDate =
-        date.toLocaleString(
-          undefined,
-          {
-            dateStyle:"medium",
-            timeStyle:"short"
-          }
-        );
-
-
-      const itemsHTML =
-        order.items
-          .map(
-            item => {
-
-              const c =
-                item.customization || {};
-
-
-              return `
-
-                <div class="order-product-row">
-
-                  <img
-                    src="${escapeHTML(item.image)}"
-                    alt=""
-                  >
-
-                  <div style="flex:1;">
-
-                    <h4>
-                      ${escapeHTML(item.name)}
-                    </h4>
-
-                    <p>
-                      Quantity:
-                      ${Number(item.quantity)}
-
-                      · Size:
-                      ${escapeHTML(c.size || "—")}
-
-                      · Color:
-                      ${escapeHTML(c.color || "—")}
-                    </p>
-
-                    <p>
-                      Print:
-                      ${escapeHTML(c.location || "—")}
-                    </p>
-
-                  </div>
-
-                  <strong>
-                    $${(
-                      Number(item.price) *
-                      Number(item.quantity)
-                    ).toFixed(2)}
-                  </strong>
-
-                </div>
-
-              `;
-
-            }
-          )
-          .join("");
-
-
-      const shipping =
-        order.items[0]?.shipping || {};
-
-
-      return `
-
-        <div class="order-card">
-
-          <div class="order-card-header">
+        const products = items.map(item => `
+          <div class="order-product-row">
+            <img
+              src="${escapeHTML(item.image || "")}"
+              alt="${escapeHTML(item.name || "Product")}"
+            >
 
             <div>
+              <h4>${escapeHTML(item.name || "Product")}</h4>
 
-              <div class="order-number-small">
-                ${escapeHTML(order.orderNumber)}
+              <p>
+                Colour: ${escapeHTML(item.color || "Not specified")}
+              </p>
+
+              <p>
+                Size: ${escapeHTML(item.size || "Not specified")}
+              </p>
+
+              <p>
+                Quantity: ${Number(item.quantity) || 1}
+              </p>
+
+              <p>
+                ${formatPrice(
+                  (Number(item.price) || 0) *
+                  (Number(item.quantity) || 1)
+                )}
+              </p>
+            </div>
+          </div>
+        `).join("");
+
+        const giftCard = order.giftCard || {};
+
+        return `
+          <article class="order-card">
+
+            <div class="order-card-header">
+              <div>
+                <div class="order-number-small">
+                  ${escapeHTML(order.orderNumber || "")}
+                </div>
+
+                <div class="order-date">
+                  ${escapeHTML(date)}
+                </div>
               </div>
 
-              <div class="order-date">
-                ${escapeHTML(formattedDate)}
+              <span class="status">
+                ${escapeHTML(order.status || "Submitted")}
+              </span>
+            </div>
+
+            <div class="order-card-body">
+
+              ${products}
+
+              <div class="order-total">
+                <span>Order Total</span>
+
+                <span>
+                  ${formatPrice(order.total)}
+                </span>
+              </div>
+
+              <div class="shipping-card">
+                <strong>Delivery Information</strong>
+
+                ${escapeHTML(shipping.name || "")}<br>
+
+                ${escapeHTML(shipping.address || "")}
+
+                ${shipping.apartment
+                  ? ", " + escapeHTML(shipping.apartment)
+                  : ""}<br>
+
+                ${escapeHTML(shipping.city || "")},
+
+                ${escapeHTML(shipping.state || "")}<br>
+
+                ${escapeHTML(shipping.country || "")}<br>
+
+                Phone: ${escapeHTML(shipping.phone || "")}<br>
+
+                Email: ${escapeHTML(shipping.email || "")}
+              </div>
+
+              <div class="shipping-card">
+                <strong>Gift Card Information</strong>
+
+                Type: ${escapeHTML(giftCard.type || "Not specified")}<br>
+
+                Image reference:
+                ${escapeHTML(giftCard.publicId || "Not available")}<br>
+
+                Payment method:
+                ${escapeHTML(order.paymentMethod || "")}<br>
+
+                Transaction reference:
+                ${escapeHTML(order.txid || "")}
               </div>
 
             </div>
-
-            <span class="status">
-              ${escapeHTML(order.status)}
-            </span>
-
-          </div>
-
-
-          <div class="order-card-body">
-
-            ${itemsHTML}
-
-
-            <div class="order-total">
-
-              <span>Total</span>
-
-              <span>
-                $${Number(order.total).toFixed(2)}
-              </span>
-
-            </div>
-
-
-            <div class="shipping-card">
-
-              <strong>
-                Delivery Address
-              </strong>
-
-              ${escapeHTML(shipping.name || "")}<br>
-
-              ${escapeHTML(shipping.address || "")}<br>
-
-              ${escapeHTML(shipping.city || "")},
-              ${escapeHTML(shipping.state || "")}
-              ${escapeHTML(shipping.zip || "")}<br>
-
-              ${escapeHTML(shipping.country || "")}<br>
-
-              ${escapeHTML(shipping.phone || "")}
-
-            </div>
-
-
-            <div class="shipping-card">
-
-              <strong>
-                Payment
-              </strong>
-
-              Method:
-              ${escapeHTML(order.paymentMethod)}
-              <br>
-
-              TXID:
-              <span style="word-break:break-all;">
-                ${escapeHTML(order.txid)}
-              </span>
-
-            </div>
-
-
-          </div>
-
-        </div>
-
-      `;
-
+          </article>
+        `;
+      }).join("");
     }
 
 
-    /* =========================================================
-       ORDER NUMBER
-    ========================================================== */
+    function searchOrders() {
+      const input = document.getElementById("orderSearch");
 
-    function createOrderNumber(){
-
-      const year =
-        new Date().getFullYear();
-
-      const random =
-        Math.floor(
-          100000 +
-          Math.random() * 900000
-        );
-
-      return `TPT-${year}-${random}`;
-
+      renderOrders(input.value);
     }
 
 
-    /* =========================================================
-       HELPERS
-    ========================================================== */
-
-    function generateId(){
-
-      if(
-        typeof crypto !== "undefined" &&
-        crypto.randomUUID
-      ){
-
-        return crypto.randomUUID();
-
+    document.getElementById("orderSearch").addEventListener(
+      "keydown",
+      function (event) {
+        if (event.key === "Enter") {
+          event.preventDefault();
+          searchOrders();
+        }
       }
-
-      return (
-        Date.now() +
-        "-" +
-        Math.random()
-          .toString(36)
-          .substring(2,10)
-      );
-
-    }
+    );
 
 
-    function escapeHTML(value){
+    /* ================= GIFT CARD PREVIEW ================= */
 
-      return String(value ?? "")
-        .replace(/&/g,"&amp;")
-        .replace(/</g,"&lt;")
-        .replace(/>/g,"&gt;")
-        .replace(/"/g,"&quot;")
-        .replace(/'/g,"&#039;");
+    document.getElementById("giftCardImage").addEventListener(
+      "change",
+      function () {
+        const file = this.files && this.files[0];
 
-    }
-
-
-    function showToast(message){
-
-      const toast =
-        document.getElementById(
-          "toast"
+        const preview = document.getElementById(
+          "giftCardPreview"
         );
 
-      toast.textContent =
-        message;
-
-      toast.classList.add(
-        "show"
-      );
-
-      clearTimeout(
-        window.toastTimer
-      );
-
-      window.toastTimer =
-        setTimeout(
-          () => {
-
-            toast.classList.remove(
-              "show"
-            );
-
-          },
-          2800
+        const status = document.getElementById(
+          "giftCardUploadStatus"
         );
 
-    }
+        if (preview.dataset.previewUrl) {
+          URL.revokeObjectURL(preview.dataset.previewUrl);
+        }
+
+        preview.removeAttribute("src");
+
+        delete preview.dataset.previewUrl;
+
+        preview.classList.remove("visible");
+
+        if (status) {
+          status.textContent = "";
+        }
+
+        if (!file) return;
+
+        const allowedTypes = [
+          "image/jpeg",
+          "image/png",
+          "image/webp"
+        ];
+
+        if (!allowedTypes.includes(file.type)) {
+          this.value = "";
+
+          showToast(
+            "Upload a JPG, PNG, or WebP image."
+          );
+
+          return;
+        }
+
+        if (file.size > 5 * 1024 * 1024) {
+          this.value = "";
+
+          showToast(
+            "The image must be 5 MB or smaller."
+          );
+
+          return;
+        }
+
+        const previewUrl = URL.createObjectURL(file);
+
+        preview.src = previewUrl;
+
+        preview.dataset.previewUrl = previewUrl;
+
+        preview.classList.add("visible");
+      }
+    );
 
 
-    /* =========================================================
-       CLOSE MODAL WHEN CLICKING OUTSIDE
-    ========================================================== */
+    /* ================= MODAL EVENTS ================= */
 
-    document
-      .querySelectorAll(".modal")
-      .forEach(modal => {
-
-        modal.addEventListener(
-          "click",
-          event => {
-
-            if(
-              event.target === modal
-            ){
-
-              modal.classList.remove(
-                "active"
-              );
-
-            }
-
-          }
-        );
-
+    document.querySelectorAll(".modal").forEach(modal => {
+      modal.addEventListener("click", function (event) {
+        if (event.target === modal) {
+          closeModal(modal.id);
+        }
       });
+    });
 
 
-    /* =========================================================
-       INITIALIZE
-    ========================================================== */
+    document.addEventListener("keydown", function (event) {
+      if (event.key === "Escape") {
+        const activeModal = document.querySelector(
+          ".modal.active"
+        );
+
+        if (activeModal) {
+          closeModal(activeModal.id);
+        }
+      }
+    });
+
+
+    /* ================= INITIALIZATION ================= */
 
     document.getElementById(
-      "year"
-    ).textContent =
-      new Date().getFullYear();
+      "currentYear"
+    ).textContent = new Date().getFullYear();
 
-    renderProducts();
+    loadCart();
 
-    updateCartCount();
+    renderCart();
 
+    renderOrders();
+
+
+    /* ================= END OF TRAILERPARK TRAV ================= */
   </script>
 
 </body>
