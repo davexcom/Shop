@@ -904,14 +904,27 @@ function goToPayment() {
 }
 
 function openPayment() {
-  document.getElementById("paymentTotal").textContent = "$" + getCartTotal().toFixed(2);
-  document.getElementById("paymentModal").classList.add("active");
+  document.getElementById("paymentTotal").textContent =
+    "$" + getCartTotal().toFixed(2);
+
   document.getElementById("btcAddress").value = BTC_ADDRESS;
   document.getElementById("usdtAddress").value = USDT_ADDRESS;
 
   generateQRs();
-  selectPayment(selectedPayment);
-}
+
+  // Hide all payment details initially
+  selectedPayment = null;
+
+  document.getElementById("btcTab").classList.remove("active");
+  document.getElementById("usdtTab").classList.remove("active");
+  document.getElementById("giftcardTab").classList.remove("active");
+
+  document.getElementById("btcPayment").classList.remove("active");
+  document.getElementById("usdtPayment").classList.remove("active");
+  document.getElementById("giftcardPayment").classList.remove("active");
+
+  document.getElementById("paymentModal").classList.add("active");
+    }
 
 function closePayment() {
   document.getElementById("paymentModal").classList.remove("active");
