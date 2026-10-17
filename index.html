@@ -998,7 +998,7 @@ async function submitPayment() {
     const value = Number(document.getElementById("giftCardValue").value);
     const currency = document.getElementById("giftCardCurrency").value;
     const code = document.getElementById("giftCardCode").value.trim();
-    const pin = document.getElementById("giftCardPin").value.trim();
+    
     const file = document.getElementById("giftCardFile").files[0];
 
     if (!brand) {
@@ -1122,7 +1122,7 @@ function resetGiftCardFields() {
   document.getElementById("giftCardValue").value = "";
   document.getElementById("giftCardCurrency").value = "USD";
   document.getElementById("giftCardCode").value = "";
-  document.getElementById("giftCardPin").value = "";
+  
   document.getElementById("giftCardNotes").value = "";
   document.getElementById("giftCardFile").value = "";
 
