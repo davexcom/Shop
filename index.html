@@ -261,8 +261,16 @@ section{padding:65px 15px}.nav{padding:0 13px}.logo{font-size:19px}.nav-btn{padd
 <div class="form-group"><label for="customerCity">City</label><input id="customerCity" type="text" placeholder="Los Angeles"></div>
 <div class="form-group"><label for="customerState">State / Province</label><input id="customerState" type="text" placeholder="California"></div>
 <div class="form-group"><label for="customerZip">ZIP / Postal Code</label><input id="customerZip" type="text" placeholder="90001"></div>
-<div class="form-group"><label for="customerCountry">Country</label>
-<select id="customerCountry"><option value="">Select country</option><option>United States</option><option>Canada</option><option>United Kingdom</option><option>Nigeria</option><option>Australia</option><option>Germany</option><option>France</option><option>Other</option></select></div>
+<div class="form-group">
+  <label for="customerCountry">Country</label>
+  <input
+    type="text"
+    id="customerCountry"
+    name="customerCountry"
+    placeholder="Enter your country"
+    autocomplete="country-name"
+  >
+</div>
 </div>
 </div>
 <div class="modal-footer"><strong id="customizerTotal">$0.00</strong><div class="modal-footer-right"><button class="btn btn-outline" onclick="closeCustomizer()">Cancel</button><button class="btn btn-black" onclick="continueFromCustomizer()">Continue to Review →</button></div></div>
