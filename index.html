@@ -299,12 +299,20 @@ section{padding:65px 15px}.nav{padding:0 13px}.logo{font-size:19px}.nav-btn{padd
 <div class="payment-total"><span>Order Total</span><strong id="paymentTotal">$0.00</strong></div>
 
 <div class="payment-tabs">
-<button class="payment-tab active" id="btcTab" onclick="selectPayment('BTC')">₿ Bitcoin</button>
-<button class="payment-tab" id="usdtTab" onclick="selectPayment('USDT')">₮ USDT BEP20</button>
-<button class="payment-tab" id="giftcardTab" onclick="selectPayment('GIFTCARD')">Gift Card</button>
+  <button type="button" class="payment-tab" id="btcTab" onclick="selectPayment('BTC')">
+    ₿ Pay with Bitcoin
+  </button>
+
+  <button type="button" class="payment-tab" id="usdtTab" onclick="selectPayment('USDT')">
+    ₮ Pay with USDT
+  </button>
+
+  <button type="button" class="payment-tab" id="giftcardTab" onclick="selectPayment('GIFTCARD')">
+    Pay with Gift Card
+  </button>
 </div>
 
-<div class="payment-method active" id="btcPayment">
+<div class="payment-method" id="btcPayment">
 <h3>Bitcoin </h3>
 <p>Send your payment to this Bitcoin address.</p>
 <div class="qr-wrap"><img id="btcQR" src="" alt="Bitcoin QR code"></div>
@@ -1351,11 +1359,9 @@ updateCartCount();
 
 document.getElementById("giftCardBrand").addEventListener("change", function() {
   const codeField = document.getElementById("giftCardCode");
-  const pinField = document.getElementById("giftCardPin");
 
   if (this.value === "Apple") {
     codeField.placeholder = "Enter gift-card code only if requested";
-    pinField.placeholder = "Enter PIN only if required";
   }
 });
 </script>
